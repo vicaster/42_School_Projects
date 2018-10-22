@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/03 18:05:43 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/17 20:46:09 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/22 20:38:58 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -89,5 +89,7 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				*ft_strrealloc(void *str, size_t size);
+char				*ft_strcdup(const char *s1, size_t c);
+char				*ft_strcendup(const char *s1, size_t c);
 
 #endif
