@@ -3,75 +3,41 @@
 /*                                                              /             */
 /*   ft_strsplit.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rcodazzi <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/15 13:10:51 by rcodazzi     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/15 18:59:10 by rcodazzi    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/12 22:33:05 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/15 13:14:15 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_nbletter(const char *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
-	size_t	i;
-	size_t	letter;
-
-	i = 0;
-	letter = 0;
-	while (s[i] && s[i] != c)
-	{
-		letter++;
-		i++;
-	}
-	return (letter);
-}
-
-static size_t	ft_nbword(const char *s, char c)
-{
-	size_t	i;
-	size_t	word;
-
-	i = 0;
-	word = 0;
-	while (s[i])
-	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i])
-			word++;
-		while (s[i] && s[i] != c)
-			i++;
-	}
-	return (word);
-}
-
-char			**ft_strsplit(char const *s, char c)
-{
-	size_t	i;
-	size_t	nbword;
-	size_t	j;
-	char	**res;
+	unsigned int		i;
+	unsigned int		j;
+	char				**dst;
+	int					nb_words;
 
 	i = 0;
 	j = 0;
-	if (!(s))
+	if (s == NULL)
 		return (NULL);
-	nbword = ft_nbword(s, c);
-	if (!(res = (malloc(sizeof(char*) * nbword + 1))))
+	nb_words = ft_count_words(s, c);
+	if ((dst = malloc(sizeof(char*) * (nb_words + 1))) == NULL)
 		return (NULL);
-	while (nbword > 0)
+	while (nb_words > 0)
 	{
-		while (s[i] == c && s[i])
+		while (s[i] == c)
 			i++;
-		if (!(res[j] = ft_strsub(s, i, ft_nbletter(s + i, c))))
+		if (!(dst[j] = ft_strsub(s, i, ft_count_letter(s + i, c))))
 			return (NULL);
 		j++;
 		while (s[i] && s[i] != c)
 			i++;
-		nbword--;
+		nb_words--;
 	}
-	res[j] = NULL;
-	return (res);
+	dst[j] = NULL;
+	return (dst);
 }

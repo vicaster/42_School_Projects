@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   itoa.c                                           .::    .:/ .      .::   */
+/*   ft_itoa.c                                        .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rcodazzi <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/15 13:34:13 by rcodazzi     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/15 18:55:12 by rcodazzi    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/08 14:42:36 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/16 19:20:24 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,29 +15,21 @@
 
 char	*ft_itoa(int n)
 {
-	int				i;
-	char			*res;
-	unsigned int	j;
-	int				signe;
+	char				*str;
+	int					i;
+	unsigned int		nb;
 
-	signe = 1;
-	j = 0;
 	i = 0;
-	if (!(res = malloc(sizeof(char) * (ft_lenint(n) + 1))))
+	if (!(str = (char*)malloc(sizeof(char) * ft_count_int(n) + 1)))
 		return (NULL);
-	j = (n < 0 ? -n : n);
-	if (n < 0)
-		signe = -1;
-	if (n == 0)
-		res[i] = 48;
-	while (j)
+	nb = (n < 0 ? -n : n);
+	while (nb)
 	{
-		res[i] = (j % 10) + 48;
-		j = j / 10;
-		i++;
+		str[i++] = nb % 10 + 48;
+		nb = nb / 10;
 	}
-	if (signe == -1)
-		res[i] = '-';
-	res[ft_lenint(n) + 1] = '\0';
-	return (ft_strrev(res));
+	if (n <= 0)
+		str[i++] = (n == 0 ? '0' : '-');
+	str[i] = '\0';
+	return (ft_strrev(str));
 }

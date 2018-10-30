@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_lenint.c                                      .::    .:/ .      .::   */
+/*   ft_count_words.c                                 .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rcodazzi <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/15 17:10:38 by rcodazzi     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/17 16:05:50 by rcodazzi    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/12 22:42:39 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/15 11:22:35 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lenint(int n)
+int		ft_count_words(const char *s, char c)
 {
-	int				i;
-	unsigned int	j;
+	int	i;
+	int	nb;
 
 	i = 0;
-	j = (n < 0 ? -n : n);
-	if (n < 0)
-		i += 1;
-	while (j /= 10)
-		i++;
-	return (i);
+	nb = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i])
+			nb++;
+		while (s[i] && s[i] != c)
+			i++;
+	}
+	return (nb);
 }

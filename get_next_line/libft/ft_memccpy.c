@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_memccpy.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rcodazzi <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/12 15:35:12 by rcodazzi     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/12 17:47:12 by rcodazzi    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/11 18:03:19 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/12 17:36:15 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,7 +15,7 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
 	while (i < n)

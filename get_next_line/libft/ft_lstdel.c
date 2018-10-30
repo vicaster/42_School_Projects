@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_lstdel.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rcodazzi <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/18 16:04:30 by rcodazzi     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/18 19:30:25 by rcodazzi    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/16 15:00:52 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/16 20:03:27 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,24 +15,17 @@
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	if (!(alst) || !(del))
-		return ;
-	if (!(*alst)->next)
+	t_list	*tmp;
+
+	if (alst && *alst)
 	{
-		del((*alst)->content, (*alst)->content_size);
-		free(*alst);
+		while (*alst)
+		{
+			tmp = (*alst)->next;
+			del((*alst)->content, (*alst)->content_size);
+			free(*alst);
+			*alst = tmp;
+		}
 		(*alst) = NULL;
 	}
-	else
-	{
-		del((*alst)->content, (*alst)->content_size);
-		free(*alst);
-		(*alst) = (*alst)->next;
-	}
-	if (!(*alst)->next)
-	{
-		del((*alst)->content, (*alst)->content_size);
-		free(*alst);
-	}
-	(*alst) = NULL;
 }

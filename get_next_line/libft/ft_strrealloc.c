@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_tnrvf.c                                       .::    .:/ .      .::   */
+/*   ft_realloc.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rcodazzi <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/13 14:37:08 by rcodazzi     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/13 14:56:29 by rcodazzi    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/17 15:01:12 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/17 19:12:21 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tnrvf(char c)
+void	*ft_strrealloc(void *str, size_t size)
 {
-	if (c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f'
-			|| c == ' ')
-		return (1);
-	else
-		return (0);
+	char	*fraiche;
+
+	if (!size && str)
+	{
+		if (!(fraiche = (char *)malloc(sizeof(char))))
+			return (NULL);
+		ft_memdel(&str);
+		return (fraiche);
+	}
+	if (!(fraiche = ft_strnew(size + 1)))
+		return (NULL);
+	if (str)
+	{
+		ft_memcpy(fraiche, str, size);
+		ft_memdel(&str);
+	}
+	return (fraiche);
 }

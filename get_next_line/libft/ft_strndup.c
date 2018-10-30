@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_strndup.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rcodazzi <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/17 18:54:41 by rcodazzi     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/17 19:05:30 by rcodazzi    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/25 14:15:17 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/29 14:37:36 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -31,6 +31,6 @@ char	*ft_strndup(const char *s, size_t n)
 		dest[i] = s[i];
 		i++;
 	}
-	dest[i++] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }

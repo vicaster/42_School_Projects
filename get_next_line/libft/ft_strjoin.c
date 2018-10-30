@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_strjoin.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rcodazzi <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/10 19:34:56 by rcodazzi     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/10 20:57:31 by rcodazzi    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/10 20:06:43 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/29 14:45:15 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,13 +15,15 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*res;
+	char		*fraiche;
+	size_t		lentot;
 
-	if (!(s1) || !(s2))
+	if (s1 == '\0' || s2 == '\0')
 		return (NULL);
-	if (!(res = ft_strnew((ft_strlen(s1) + ft_strlen(s2)))))
+	lentot = ft_strlen((char*)s1) + ft_strlen((char*)s2);
+	if (!(fraiche = ft_strnew(lentot)))
 		return (NULL);
-	ft_strcpy(res, s1);
-	ft_strcat(res, s2);
-	return (res);
+	ft_strcpy(fraiche, (char*)s1);
+	ft_strcat(fraiche, (char*)s2);
+	return (fraiche);
 }

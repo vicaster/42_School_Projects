@@ -3,40 +3,50 @@
 /*                                                              /             */
 /*   ft_strtrim.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rcodazzi <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/11 15:20:19 by rcodazzi     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/18 16:27:29 by rcodazzi    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/10 20:58:03 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/15 19:11:46 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static char	*ft_creat_null(void)
 {
-	int		end;
-	int		length;
-	char	*new;
-	int		i;
+	char	*str;
 
-	if (!s)
+	if (!(str = malloc(sizeof(char))))
 		return (NULL);
-	while (*s == ' ' || *s == '\t' || *s == '\n')
-		s++;
-	if ((end = ft_strlen(s) - 1) == 0)
-		return (new = ft_strnew(0));
-	while (end > 0 && (s[end] == ' ' || s[end] == '\t' || s[end] == '\n'))
-		end--;
-	length = end + 1;
-	if (!(new = (char*)malloc(length + 1)))
-		return (NULL);
+	str[0] = '\0';
+	return (str);
+}
+
+char		*ft_strtrim(char const *s)
+{
+	char	*dest;
+	int		i;
+	int		j;
+	int		k;
+
+	j = 0;
 	i = 0;
-	while (length)
-	{
-		length--;
-		new[i++] = *s++;
-	}
-	new[i] = '\0';
-	return (new);
+	k = 0;
+	if ((char*)s == NULL)
+		return (NULL);
+	while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && s[i])
+		i++;
+	if (s[i] == '\0')
+		return (ft_creat_null());
+	while (s[j])
+		j++;
+	j--;
+	while ((s[j] == ' ' || s[j] == '\n' || s[j] == '\t') && j > 0)
+		j--;
+	if (!(dest = ft_strnew(j - i + 1)))
+		return (NULL);
+	while (i <= j)
+		dest[k++] = s[i++];
+	return (dest);
 }

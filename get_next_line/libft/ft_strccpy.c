@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_revmemcpy.c                                   .::    .:/ .      .::   */
+/*   ft_strccpy.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rcodazzi <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/12 19:20:37 by rcodazzi     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/12 19:48:59 by rcodazzi    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/23 16:59:08 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/23 17:02:26 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_revmemcpy(void *dest, const void *src, size_t n)
+char	*ft_strccpy(char *dst, const char *src, int c)
 {
-	unsigned char	*tmp_dst;
-	unsigned char	*tmp_src;
+	int		i;
 
-	tmp_dst = (unsigned char*)dest;
-	tmp_src = (unsigned char*)src;
-	while (n > 0)
+	i = 0;
+	while (src[i] && src[i] != (unsigned char)c)
 	{
-		n--;
-		tmp_dst[n] = tmp_src[n];
+		dst[i] = src[i];
+		i++;
 	}
-	return (dest);
+	dst[i] = '\0';
+	return (dst);
 }

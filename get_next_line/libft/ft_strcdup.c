@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_swap.c                                        .::    .:/ .      .::   */
+/*   ft_strcdup.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rcodazzi <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/17 18:39:09 by rcodazzi     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/17 18:40:07 by rcodazzi    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/22 20:23:04 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/23 15:24:03 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
-{
-	int c;
+#include "libft.h"
 
-	c = *a;
-	*a = *b;
-	*b = c;
+char	*ft_strcdup(const char *s1, size_t c)
+{
+	char	*dest;
+	int		size;
+
+	dest = NULL;
+	if (!(dest = (char*)malloc(sizeof(char) * (ft_strlen(s1) + 1))))
+		return (NULL);
+	size = 0;
+	while (s1[size] && s1[size] != (unsigned char)c)
+	{
+		dest[size] = s1[size];
+		size++;
+	}
+	dest[size] = '\0';
+	return (dest);
 }

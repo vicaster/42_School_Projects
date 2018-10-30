@@ -3,34 +3,34 @@
 /*                                                              /             */
 /*   ft_strrev.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rcodazzi <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/15 18:35:40 by rcodazzi     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/16 09:44:45 by rcodazzi    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/08 17:40:12 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/08 18:02:57 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrev(char *s)
+char	*ft_strrev(char *str)
 {
 	int		i;
 	int		j;
-	char	tmp;
+	char	swap;
 
 	i = 0;
 	j = 0;
-	while (s[i])
-		i++;
-	i--;
-	while (i > j)
-	{
-		tmp = s[i];
-		s[i] = s[j];
-		s[j] = tmp;
+	while (str[j])
 		j++;
-		i--;
+	j--;
+	while (i <= j)
+	{
+		swap = str[i];
+		str[i] = str[j];
+		str[j] = swap;
+		i++;
+		j--;
 	}
-	return (s);
+	return (str);
 }
