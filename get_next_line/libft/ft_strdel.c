@@ -6,7 +6,11 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/08 19:08:22 by vicaster     #+#   ##    ##    #+#       */
+<<<<<<< HEAD
 /*   Updated: 2018/10/31 13:32:12 by vicaster    ###    #+. /#+    ###.fr     */
+=======
+/*   Updated: 2018/10/11 15:54:59 by vicaster    ###    #+. /#+    ###.fr     */
+>>>>>>> 16443d7b47f6c9ecb1d027acf653239a95a82f73
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,9 +19,16 @@
 
 void	ft_strdel(char **as)
 {
+<<<<<<< HEAD
 	if (as)
 	{
 		free(*as);
 		*as = NULL;
 	}
+=======
+	if (!(as))
+		return ;
+	*as = (char*)NULL;
+	free(*as);
+>>>>>>> 16443d7b47f6c9ecb1d027acf653239a95a82f73
 }
