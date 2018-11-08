@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/05 18:01:57 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/07 19:22:17 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/08 16:38:25 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -32,15 +32,13 @@ void	ft_replace(char *buff, int i)
 	}
 }
 
-void	ft_fill_list(int fd)
+void	ft_fill_list(int fd, int i)
 {
 	int		ret;
-	int		i;
 	char	*buff;
 	t_list	*start;
 	t_list	*list;
 
-	i = 0;
 	if (!(buff = ft_memalloc(21)))
 		ft_print_error();
 	while ((ret = read(fd, buff, 21)) && i <= 26)
@@ -53,8 +51,31 @@ void	ft_fill_list(int fd)
 			ft_replace(buff, i);
 			list = ft_lstnew(buff, 21);
 			ft_push_back(&start, list);
-//			list->air = ft_calcul_air(buff);
 		}
 		i++;
 	}
+}
+
+char    **ft_init_tab(void)
+{
+    char    **tab;
+    int     i;
+    int     j;
+
+    i = 0;
+    tab = (char**)malloc(sizeof(char*) * 50);
+	while (i < 49)
+	{
+        j = 0;
+		tab[i] = (char*)malloc(sizeof(char) * 50);
+        while (j < 48)
+        {
+            tab[i][j] = '.';
+            j++;
+        }
+        tab[i][j] = '\n';
+        tab[i][j + 1] = '\0';
+		i++;
+	}
+    return (tab);
 }
