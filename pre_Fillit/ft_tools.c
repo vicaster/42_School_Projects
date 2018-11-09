@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/05 18:01:57 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/08 16:58:43 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/09 17:00:13 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -56,26 +56,26 @@ void	ft_fill_list(int fd, int i)
 	}
 }
 
-char    **ft_init_tab(void)
+char    **ft_init_tab(int size)
 {
     char    **tab;
     int     i;
     int     j;
 
     i = 0;
-    tab = (char**)malloc(sizeof(char*) * 50);
-	while (i < 49)
+    tab = (char**)malloc(sizeof(char*) * (size + 1));
+	while (i < size)
 	{
         j = 0;
-		tab[i] = (char*)malloc(sizeof(char) * 50);
-        while (j < 48)
+		tab[i] = (char*)malloc(sizeof(char) * (size + 1));
+        while (j < size)
         {
             tab[i][j] = '.';
             j++;
         }
-        tab[i][j] = '\n';
-        tab[i][j + 1] = '\0';
+        tab[i][j] = '\0';
 		i++;
 	}
+	tab[i] = NULL;
     return (tab);
 }
