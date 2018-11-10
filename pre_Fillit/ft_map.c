@@ -6,26 +6,35 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/09 14:53:29 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/09 17:23:54 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/10 19:50:45 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	ft_fill_map(char **tab, t_list *list)
+void	ft_fill_map(char **tab, t_list *list)
 {
-	int		x;
-	int		y;
+	int		i;
+	int		j;
+	char	*str;
 	int		boolean;
 
-	x = 0;
-	y = 0;
+	i = 0;
+	j = 0;
 	boolean = 0;
-	while (tab[x])
+	while (list->next)
 	{
-		list
-		x++;
+		str = list->content;
+		while (str[i])
+		{
+			if (str[i] != '.' && tab[j] == '.')
+			{
+				
+			}
+			i++;
+		}
+		list = list->next;
 	}
 	return (tab);
 }
