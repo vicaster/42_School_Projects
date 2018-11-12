@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/02 15:43:36 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/10 19:15:28 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/12 16:14:05 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,17 +22,17 @@
 typedef struct		s_lst
 {
 	void			*data;
-	size_t			air;
 	struct s_lst	*next;
+	struct s_lst	*prev;
 }					t_lst;
 
 int					ft_check_errors(int fd, char *buff);
-void				fillit(int fd);
+void				fillit(int fd, int size_tab);
 void				ft_print_error(void);
 void				ft_stock_buff(char *buff);
 void				ft_replace(char *buff, int	i);
-t_list				*ft_fill_list(int fd, int i);
+t_lst				*ft_fill_list(int fd, int i);
 char				**ft_init_tab(int size);
-void				ft_fill_map(char **tab, t_list *list);
+int					ft_fill_map(char **tab, t_list *list);
 
 #endif

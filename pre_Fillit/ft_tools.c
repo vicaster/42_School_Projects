@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/05 18:01:57 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/10 19:12:57 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/12 16:14:21 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -32,13 +32,14 @@ void	ft_replace(char *buff, int i)
 	}
 }
 
-t_list	*ft_fill_list(int fd, int i)
+t_lst	*ft_fill_list(int fd, int i)
 {
 	int		ret;
 	char	*buff;
-	t_list	*start;
-	t_list	*list;
+	t_lst	*start;
+	t_lst	*list;
 
+	start->prev = NULL;
 	if (!(buff = ft_memalloc(21)))
 		ft_print_error();
 	while ((ret = read(fd, buff, 21)) && i <= 26)
