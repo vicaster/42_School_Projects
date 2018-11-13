@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/05 18:01:57 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/13 15:18:44 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/13 18:03:47 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,42 +35,32 @@ void	ft_replace(char *buff, int i)
 char	**ft_tetriminos(char *buff)
 {
 	int		i;
-	int		x;
-	int		y;
+	int		j;
 	char	**tab;
 
 	i = 0;
-	x = 0;
-	y = 0;
-	tab = ft_memalloc(5);
-	while (i <= 5)
-		tab[i++] = ft_memalloc(5);
-	i = 0;
-	while (buff[i])
+	j = 0;
+	if (!(tab = (char**)malloc(sizeof(char*) * 4)))
+		ft_print_error();
+	while (i < 4)
 	{
-		if (buff[i] == '\n')
-		{
-			x = 0;
-			y++;
-		}
-		if (buff[i] != '.')
-			tab[y][x] = buff[i];
+		tab[i] = ft_strndup(buff + j, 4);
+		ft_putendl(tab[i]);
 		i++;
-		x++;
+		j += 5;
 	}
 	return (tab);
 }
 
-t_lst	*ft_fill_list(int fd, int i)
+char	***ft_fill_list(int fd, int i)
 {
 	int		ret;
 	char	*buff;
-	char	**tetri;
-	t_lst	*start;
-	t_lst	*list;
+	char	***tetri;
 
-	start->prev = NULL;
 	if (!(buff = ft_memalloc(21)))
+		ft_print_error();
+	if (!(tetri = ft_memalloc(26)))
 		ft_print_error();
 	while ((ret = read(fd, buff, 21)) && i <= 26)
 	{
@@ -80,14 +70,11 @@ t_lst	*ft_fill_list(int fd, int i)
 		if (ft_check_errors(fd, buff) == 1)
 		{
 			ft_replace(buff, i);
-			tetri = ft_tetriminos(buff);
-			ft_puttab(tetri);
-			list = ft_lstnew(*tetri, 21);
-			ft_push_back(&start, list);
+			tetri[i] = ft_tetriminos(buff);
 		}
 		i++;
 	}
-	return (list);
+	return (tetri);
 }
 
 char    **ft_init_tab(int size)
