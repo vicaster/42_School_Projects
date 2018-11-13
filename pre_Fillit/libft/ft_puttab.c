@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_map.c                                         .::    .:/ .      .::   */
+/*   ft_puttab.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/11/09 14:53:29 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/13 15:03:33 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/13 13:13:31 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/13 13:14:01 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int		ft_fill_map(char **tab, t_list *list)
+void	ft_puttab(char **tab)
 {
 	int		i;
-	int		x;
-	int		y;
-	char	*str;
 
 	i = 0;
-	x = 0;
-	y = 0;
-	while (list->next)
+	while (tab[i])
 	{
-		str = list->data;
-		while (str[i])
-		{
-			if (str[i] != '.' && tab[x][y] == '.')
-			{
-				
-			}
-			i++;
-		}
-		list = list->next;
+		ft_putendl(tab[i]);
+		i++;
 	}
-	return (0);
 }

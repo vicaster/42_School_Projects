@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/02 15:43:36 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/12 16:14:05 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/13 15:08:45 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -33,6 +33,6 @@ void				ft_stock_buff(char *buff);
 void				ft_replace(char *buff, int	i);
 t_lst				*ft_fill_list(int fd, int i);
 char				**ft_init_tab(int size);
-int					ft_fill_map(char **tab, t_list *list);
+int					ft_fill_map(char **tab, t_lst *list);
 
 #endif

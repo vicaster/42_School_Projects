@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/05 18:01:57 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/12 16:14:21 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/13 15:18:44 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -32,10 +32,40 @@ void	ft_replace(char *buff, int i)
 	}
 }
 
+char	**ft_tetriminos(char *buff)
+{
+	int		i;
+	int		x;
+	int		y;
+	char	**tab;
+
+	i = 0;
+	x = 0;
+	y = 0;
+	tab = ft_memalloc(5);
+	while (i <= 5)
+		tab[i++] = ft_memalloc(5);
+	i = 0;
+	while (buff[i])
+	{
+		if (buff[i] == '\n')
+		{
+			x = 0;
+			y++;
+		}
+		if (buff[i] != '.')
+			tab[y][x] = buff[i];
+		i++;
+		x++;
+	}
+	return (tab);
+}
+
 t_lst	*ft_fill_list(int fd, int i)
 {
 	int		ret;
 	char	*buff;
+	char	**tetri;
 	t_lst	*start;
 	t_lst	*list;
 
@@ -50,7 +80,9 @@ t_lst	*ft_fill_list(int fd, int i)
 		if (ft_check_errors(fd, buff) == 1)
 		{
 			ft_replace(buff, i);
-			list = ft_lstnew(buff, 21);
+			tetri = ft_tetriminos(buff);
+			ft_puttab(tetri);
+			list = ft_lstnew(*tetri, 21);
 			ft_push_back(&start, list);
 		}
 		i++;
