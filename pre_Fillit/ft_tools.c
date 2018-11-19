@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/05 18:01:57 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/13 18:03:47 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/19 16:26:27 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -52,7 +52,7 @@ char	**ft_tetriminos(char *buff)
 	return (tab);
 }
 
-char	***ft_fill_list(int fd, int i)
+char	***ft_fill_tetri(int fd, int i)
 {
 	int		ret;
 	char	*buff;
