@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/09 14:53:29 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/15 18:42:25 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/16 16:04:06 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -36,7 +36,11 @@ int		ft_copy_tetri_to_tab(char **tab, char **tetri, int i, int j)
 	y = 0;
 	while (tetri[i] || tab[y])
 	{
-		tab[y][x] = 
+		tab[y][x++] = tetri[i][j++];
+		if (tab[y][x] == '\0' || tetri[i][j] == '\0')
+		{
+
+		}
 	}
 }
 
@@ -73,10 +77,7 @@ char	**ft_fill_map(char **tab, char ***tetri)
 	i = 0;
 	x = 0;
 	y = 0;
-	while (tetri[i])
-	{
+	if ()
 		tab = ft_fill_tab(tetri[i], tab, x, y);
-		i++;
-	}
 	return (tab);
 }
