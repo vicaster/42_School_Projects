@@ -6,14 +6,14 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/05 15:53:41 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/08 16:38:55 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/22 18:29:07 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static int	ft_count_pt(char *buff)
+int		ft_count_pt(char *buff)
 {
 	int		nb;
 
@@ -28,7 +28,7 @@ static int	ft_count_pt(char *buff)
 	return (nb);
 }
 
-static int	ft_count_charp(char *buff)
+int		ft_count_charp(char *buff)
 {
 	int		nb;
 
@@ -43,22 +43,18 @@ static int	ft_count_charp(char *buff)
 	return (nb);
 }
 
-static int	ft_count_unn(char *buff)
+int		ft_count_unn(char *buff)
 {
-	int		nb;
-
-	nb = 0;
-	while (*buff)
+	if (buff[4] != '\n' || buff[9] != '\n' || buff[14] != '\n' ||
+	buff[19] != '\n' || buff[20] != '\n')
 	{
-		if (*buff++ == '\n')
-			nb++;
-	}
-	if (nb != 5)
 		ft_print_error();
-	return (nb);
+		return (0);
+	}
+	return (1);
 }
 
-static int	ft_check_neighbour(char *buff)
+int		ft_check_neighbour(char *buff)
 {
 	int		i;
 	int		nb;
@@ -86,10 +82,27 @@ static int	ft_check_neighbour(char *buff)
 	return (0);
 }
 
-int			ft_check_errors(int fd, char *buff)
+int		ft_check_lines(char *buff)
 {
-	if ((ft_count_pt(buff) == 12) && (ft_count_charp(buff) == 4) &&
-	(ft_count_unn(buff) == 5) && (ft_check_neighbour(buff) == 1))
-		return (1);
-	return (0);
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	while (buff[i] != '\n' && buff[i + 1] != '\n')
+	{
+		while (buff[i] != '\n')
+		{
+			i++;
+			j++;
+		}
+		if (j != 4)
+		{
+			ft_print_error();
+			return (0);
+		}
+		j = 0;
+		i++;
+	}
+	return (1);
 }

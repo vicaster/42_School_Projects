@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/02 15:43:36 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/19 16:27:00 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/22 18:32:07 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -27,5 +27,10 @@ void				ft_replace(char *buff, int	i);
 char				***ft_fill_tetri(int fd, int i);
 char				**ft_init_tab(int size);
 int					ft_fill_map(char **tab, char ***tetri);
+int					ft_count_pt(char *buff);
+int					ft_count_charp(char *buff);
+int					ft_count_unn(char *buff);
+int					ft_check_neighbour(char *buff);
+int					ft_check_lines(char *buff);
 
 #endif
