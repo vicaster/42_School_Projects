@@ -6,7 +6,7 @@
 #    By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/10/03 22:11:47 by vicaster     #+#   ##    ##    #+#        #
-#    Updated: 2018/11/13 13:14:23 by vicaster    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/11/26 15:53:34 by vicaster    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -85,7 +85,8 @@ SRC =	\
 		get_next_line.c\
 		ft_push_back.c\
 		ft_creat_elem.c\
-		ft_puttab.c
+		ft_puttab.c\
+		ft_print_tab.c
 
 OBJ = $(SRC:.c=.o)
 

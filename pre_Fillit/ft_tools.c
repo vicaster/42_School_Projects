@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/05 18:01:57 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/22 19:25:29 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/26 18:57:26 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -45,10 +45,11 @@ char	**ft_tetriminos(char *buff)
 	while (i < 4)
 	{
 		tab[i] = ft_strndup(buff + j, 4);
-		ft_putendl(tab[i]);
+//		ft_putendl(tab[i]); //        affichage Tetriminos
 		i++;
 		j += 5;
 	}
+	tab[i] = NULL;
 	return (tab);
 }
 
@@ -94,6 +95,7 @@ char	**ft_init_tab(int size)
 			tab[i][j] = '.';
 			j++;
 		}
+//		ft_putendl(tab[i]); //     affichage Tab
 		tab[i][j] = '\0';
 		i++;
 	}

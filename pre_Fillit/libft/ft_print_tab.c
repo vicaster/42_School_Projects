@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_puttab.c                                      .::    .:/ .      .::   */
+/*   ft_print_tab.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/11/13 13:13:31 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/26 15:55:00 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/26 15:48:05 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/26 16:25:24 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_puttab(char **tab, int size)
+void	ft_print_tab(char **tab)
 {
 	int		i;
 
 	i = 0;
-	while (i < size)
+	if (tab)
 	{
-		ft_putstr(tab[i]);
-		i++;
+		while (tab[i])
+		{
+			ft_putendl(tab[i]);
+			i++;
+		}
 	}
 }

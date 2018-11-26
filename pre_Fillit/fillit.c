@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/02 15:42:25 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/22 18:25:53 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/26 19:35:30 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,7 +22,7 @@ int		ft_check_errors(int fd, char *buff)
 	return (0);
 }
 
-void	fillit(int fd, int size_tab)
+char	**fillit(int fd, int size_tab)
 {
 	int		i;
 	char	**tab;
@@ -30,7 +30,13 @@ void	fillit(int fd, int size_tab)
 
 	i = 0;
 	tetri = ft_fill_tetri(fd, i);
-//	tab = ft_init_tab(size_tab);
-//	if (ft_fill_map(tab, tetri) == NULL)
-//		fillit(fd, size_tab++);
+	tab = ft_init_tab(size_tab);
+	tab = ft_fill_map(tab, tetri);
+	if (tab == NULL)
+	{
+		size_tab++;
+		fillit(fd, size_tab);
+	}
+	ft_print_tab(tab);
+	return (tab);
 }

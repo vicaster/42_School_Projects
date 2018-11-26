@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/03 18:05:43 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/13 17:16:45 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/26 15:55:32 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -97,6 +97,7 @@ char				*ft_strndup(const char *s, size_t n);
 int					get_next_line(const int fd, char **line);
 void				ft_push_back(t_list **begin_list, void *content);
 t_list				*ft_create_elem(void *content);
-void				ft_puttab(char **tab, size_t size);
+void				ft_puttab(char **tab, int size);
+void				ft_print_tab(char **tab);
 
 #endif
