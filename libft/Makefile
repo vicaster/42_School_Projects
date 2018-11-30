@@ -6,16 +6,14 @@
 #    By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/10/03 22:11:47 by vicaster     #+#   ##    ##    #+#        #
-#    Updated: 2018/10/17 17:55:42 by vicaster    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/11/26 15:53:34 by vicaster    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
 
-NAME	= 	libft.a
-
-CC 		= 	gcc
-CFLAGS 	= 	-Wextra -Werror -Wall
-
+NAME = libft.a
+CC = gcc
+CFLAGS = -Wextra -Werror -Wall
 SRC =	\
 		ft_atoi.c\
 		ft_bzero.c\
@@ -79,9 +77,16 @@ SRC =	\
 		ft_lstdel.c\
 		ft_lstdelone.c\
 		ft_lstiter.c\
-		ft_strrealloc.c
-
-
+		ft_strrealloc.c\
+		ft_strcdup.c\
+		ft_strccpy.c\
+		ft_strcspn.c\
+		ft_strndup.c\
+		get_next_line.c\
+		ft_push_back.c\
+		ft_creat_elem.c\
+		ft_puttab.c\
+		ft_print_tab.c
 
 OBJ = $(SRC:.c=.o)
 

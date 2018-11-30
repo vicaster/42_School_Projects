@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/08 19:08:22 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/11 15:54:59 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/31 13:32:12 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,8 +15,9 @@
 
 void	ft_strdel(char **as)
 {
-	if (!(as))
-		return ;
-	*as = (char*)NULL;
-	free(*as);
+	if (as)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

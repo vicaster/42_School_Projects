@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_print_tab.c                                   .::    .:/ .      .::   */
+/*   ft_strccpy.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/11/26 15:48:05 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/28 15:46:49 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/23 16:59:08 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/23 17:02:26 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_print_tab(char **tab)
+char	*ft_strccpy(char *dst, const char *src, int c)
 {
 	int		i;
 
 	i = 0;
-	if (tab)
+	while (src[i] && src[i] != (unsigned char)c)
 	{
-		while (tab[i])
-		{
-			ft_putendl(tab[i]);
-			i++;
-		}
+		dst[i] = src[i];
+		i++;
 	}
+	dst[i] = '\0';
+	return (dst);
 }

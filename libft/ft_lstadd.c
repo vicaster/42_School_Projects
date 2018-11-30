@@ -6,15 +6,15 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/16 17:43:18 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/16 18:46:12 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/05 15:25:30 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_lstadd(t_list **alst, t_list *nw)
 {
-	new->next = (*alst);
-	(*alst) = new;
+	nw->next = (*alst);
+	(*alst) = nw;
 }

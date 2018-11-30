@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/05 15:53:41 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/22 18:29:07 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/28 18:17:20 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -65,13 +65,13 @@ int		ft_check_neighbour(char *buff)
 	{
 		if (buff[i] == '#')
 		{
-			if (buff[i - 1] == '#')
+			if (i > 0 && buff[i - 1] == '#')
 				nb++;
-			if (buff[i + 1] == '#')
+			if (i <= 20 && buff[i + 1] == '#')
 				nb++;
-			if (buff[i - 5] == '#')
+			if (i >= 5 && buff[i - 5] == '#')
 				nb++;
-			if (buff[i + 5] == '#')
+			if (i <= 15 && buff[i + 5] == '#')
 				nb++;
 		}
 		i++;

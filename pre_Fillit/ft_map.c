@@ -5,14 +5,13 @@
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/11/09 14:53:29 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/26 19:38:48 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/29 12:49:16 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/29 16:09:37 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
 int		check_line(char *line)
 {
@@ -42,15 +41,11 @@ int		check_col(char **tetri, int x)
 	return (0);
 }
 
-char	**ft_paste(char **tetri, char **tab, int i, int j)
+char	**ft_paste(char **tetri, char **tab, int i, int j, int x, int y)
 {
-	int		x;
-	int		y;
 	int		bol;
 	int		tmpj;
 
-	x = 0;
-	y = 0;
 	bol = 0;
 	tmpj = j;
 	while (tab[y])
@@ -75,32 +70,48 @@ char	**ft_paste(char **tetri, char **tab, int i, int j)
 	return (tab);
 }
 
-char	**ft_opti_tetri(char **tetri, char **tab)
+char	**ft_opti_tetri(char **tetri, char **tab, int x, int y)
 {
-	int		y;
-	int		x;
+	int		i;
+	int		j;
 
-	y = 0;
-	x = 0;
-	while (check_col(tetri, x) == 0)
-		x++;
-	while (check_line(tetri[y]) == 0)
-		y++;
-	tab = ft_paste(tetri, tab, y, x);
+	i = 0;
+	j = 0;
+	while (check_col(tetri, j) == 0)
+		j++;
+	while (check_line(tetri[i]) == 0)
+		i++;
+	tab = ft_paste(tetri, tab, i, j, x, y);
 	return (tab);
 }
 
-char	**ft_fill_map(char **tab, char ***tetri)
+char	**ft_fill_map(char **tab, char ***tetri, int x, int y, t_tetri *strustru)
 {
-	int		a;
+	unsigned long		a;
 
 	a = 0;
-	while (tetri[a])
+	while (a < strustru->nb_tetri)
 	{
-		tab = ft_opti_tetri(tetri[a], tab);
+		tab = ft_opti_tetri(tetri[a], tab, x, y);
 		a++;
+		dprintf(1, "a = %zu\n", a);
+		ft_print_tab(tab);
+		ft_putchar('\n');
 	}
-	if (tab == NULL)
-		return (NULL);
+
+//	if (&ft_opti_tetri == NULL)
+//	{
+//		if (a > 0)
+//		{
+//			a--;
+//			x++;
+//			ft_fill_map(tab, tetri, x, y);
+//		}
+//		if (a == 0)
+//		{
+			if (tab == NULL)
+				return (NULL);
+//		}
+//	}
 	return (tab);
 }

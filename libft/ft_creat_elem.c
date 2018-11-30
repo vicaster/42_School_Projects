@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_print_tab.c                                   .::    .:/ .      .::   */
+/*   ft_creat_elem.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/11/26 15:48:05 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/28 15:46:49 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/07 15:58:02 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/07 15:58:54 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_print_tab(char **tab)
+t_list		*ft_create_elem(void *content)
 {
-	int		i;
+	t_list		*list;
 
-	i = 0;
-	if (tab)
-	{
-		while (tab[i])
-		{
-			ft_putendl(tab[i]);
-			i++;
-		}
-	}
+	if (!(list = malloc(sizeof(*list))))
+		return (0);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }

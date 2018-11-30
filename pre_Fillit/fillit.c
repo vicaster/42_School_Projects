@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/02 15:42:25 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/26 19:35:30 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/30 14:51:53 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,20 +22,21 @@ int		ft_check_errors(int fd, char *buff)
 	return (0);
 }
 
-char	**fillit(int fd, int size_tab)
+char	**fillit(int size_tab, char ***tetri, t_tetri *strustru)
 {
-	int		i;
 	char	**tab;
-	char	***tetri;
+	int		x;
+	int		y;
+	int		nb_tetri;
 
-	i = 0;
-	tetri = ft_fill_tetri(fd, i);
+	x = 0;
+	y = 0;
 	tab = ft_init_tab(size_tab);
-	tab = ft_fill_map(tab, tetri);
+	tab = ft_fill_map(tab, tetri, x, y, strustru);
 	if (tab == NULL)
 	{
 		size_tab++;
-		fillit(fd, size_tab);
+		fillit(size_tab, tetri, strustru);
 	}
 	ft_print_tab(tab);
 	return (tab);

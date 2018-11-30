@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/02 15:43:36 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/26 15:40:48 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/30 16:55:09 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,15 +18,22 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "libft/libft.h"
+# include <stdio.h> //     ATTENTION!!
+
+typedef struct  s_tetri
+{
+	int			nb_tetri;
+
+}				t_tetri;
 
 int					ft_check_errors(int fd, char *buff);
-char            	**fillit(int fd, int size_tab);
+char            	**fillit(int size_tab, char ***tetri, t_tetri *strustru);
 void				ft_print_error(void);
 void				ft_stock_buff(char *buff);
 void				ft_replace(char *buff, int	i);
-char				***ft_fill_tetri(int fd, int i);
+char				***ft_fill_tetri(char ***tetri, int fd, int i, t_tetri *strustru);
 char				**ft_init_tab(int size);
-char				**ft_fill_map(char **tab, char ***tetri);
+char				**ft_fill_map(char **tab, char ***tetri, int x, int y, t_tetri *strustru);
 int					ft_count_pt(char *buff);
 int					ft_count_charp(char *buff);
 int					ft_count_unn(char *buff);
