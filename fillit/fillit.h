@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/11 14:12:51 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/18 15:54:21 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/18 18:35:24 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,8 +17,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "libft/libft.h"
-# include <stdio.h>
-
 
 # define Y	xy->y
 # define X	xy->x

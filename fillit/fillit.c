@@ -6,12 +6,18 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/11 14:07:26 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/18 16:22:13 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/18 17:08:40 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+int		ft_free_xy(t_pose *xy)
+{
+	free(xy);
+	return (1);
+}
 
 void	prefillit(t_stru **stru, int i)
 {
@@ -52,9 +58,8 @@ int		fillit(char **tab, t_stru **stru, int p, char **bdd)
 			if (ft_cmptmap(tab, bdd[stru[p]->x], xy))
 			{
 				ft_fill(tab, bdd[stru[p]->x], xy, stru[p]->a);
-				free(xy);
 				if (fillit(tab, stru, p + 1, bdd))
-					return (1);
+					return (ft_free_xy(xy));
 				ft_clear(tab, bdd[stru[p]->x], xy);
 			}
 		}

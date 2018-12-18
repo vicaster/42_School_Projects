@@ -6,7 +6,7 @@
 #    By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/12/11 14:10:56 by vicaster     #+#   ##    ##    #+#        #
-#    Updated: 2018/12/18 16:14:43 by vicaster    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/12/18 16:37:44 by vicaster    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -43,7 +43,7 @@ WHITE = "\033[37m"
 NAME = fillit
 INC = fillit.h
 CC = gcc
-CFLAGS = -Wextra -Werror -Wall -g #-fsanitize=address
+CFLAGS = -Wextra -Werror -Wall
 SRC =	check_tetri.c\
 		fillit.c\
 		ft_bdd.c\

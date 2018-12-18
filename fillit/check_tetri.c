@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/11 14:08:06 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/17 14:50:12 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/18 18:35:18 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -87,7 +87,10 @@ int		check_buf(char *str)
 	while (str[i])
 	{
 		if (str[i] != '.' && str[i] != '#' && str[i] != '\n')
+		{
+			free(str);
 			ft_error();
+		}
 		if (str[i] == '#')
 			j++;
 		if (str[i] == '\n')
@@ -96,6 +99,7 @@ int		check_buf(char *str)
 	}
 	if ((check_buf2(i, j, k, str)) && checknl(str))
 		return (1);
+	free(str);
 	ft_error();
 	return (0);
 }

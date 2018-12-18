@@ -6,14 +6,14 @@
 #    By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/12/11 14:16:36 by vicaster     #+#   ##    ##    #+#        #
-#    Updated: 2018/12/18 11:43:58 by vicaster    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/12/18 16:37:51 by vicaster    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wextra -Werror -Wall -g
+CFLAGS = -Wextra -Werror -Wall
 SRC =	\
 		ft_atoi.c\
 		ft_bzero.c\
