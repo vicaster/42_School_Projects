@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/11 14:12:51 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/17 18:10:55 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/18 12:13:25 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -56,5 +56,5 @@ void			ft_clear(char **tab, char *str, t_pose *xy);
 int				ft_sqrt(int i);
 int				checknl(char *str);
 void			ft_error(void);
-void			ft_free_tab(char **tab);
+void			ft_free_tab(void **tab);
 #endif

@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/11 14:07:26 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/17 19:13:43 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/18 12:13:12 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -27,12 +27,12 @@ void	prefillit(t_stru **stru, int i)
 	{
 		size++;
 		stru[0]->max = size;
-		free(tab);
+		ft_free_tab((void*)tab);
 		tab = ft_initab(size);
 	}
 	ft_printtab(tab);
-	ft_free_tab(tab);
-	ft_free_tab(bdd);
+	ft_free_tab((void*)tab);
+	ft_free_tab((void*)bdd);
 }
 
 int		fillit(char **tab, t_stru **stru, int p, char **bdd)

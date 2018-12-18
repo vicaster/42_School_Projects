@@ -6,14 +6,14 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/11 14:03:48 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/17 19:24:43 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/18 12:12:49 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_free_tab(char **tab)
+void	ft_free_tab(void **tab)
 {
 	int		i;
 
@@ -42,8 +42,8 @@ int		main(int ac, char **av)
 		return (0);
 	}
 	reader(open(av[1], O_RDONLY), bdd, &i, stru);
-	ft_free_tab(bdd);
+	ft_free_tab((void*)bdd);
 	prefillit(stru, i);
-	free(stru);
+	ft_free_tab((void*)stru);
 	return (0);
 }

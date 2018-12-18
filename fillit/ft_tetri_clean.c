@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/11 14:06:05 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/17 18:23:26 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/18 12:18:29 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -36,7 +36,7 @@ char	*ft_tab_to_str(char **tab)
 		l++;
 	}
 	str[i] = '\0';
-	ft_free_tab(tab);
+	ft_free_tab((void*)tab);
 	return (str);
 }
 
