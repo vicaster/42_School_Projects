@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/11 14:12:51 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/18 18:35:24 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/03 16:58:42 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -41,7 +41,7 @@ int				ft_tetri_check_c(char **t, int c);
 void			ft_tetri_set0l(char **t, int l);
 int				ft_check_tetri(char **tc);
 char			**ft_bdd(void);
-int				check_buf(char *str);
+int				check_buf(char *str, char **bdd, t_stru **stru);
 char			*ft_tetri_clean(char *buff);
 int				tetri_cmp(char **bdd, char *str);
 void			*ft_memalloc(size_t size);
@@ -58,4 +58,6 @@ int				ft_sqrt(int i);
 int				checknl(char *str);
 void			ft_error(void);
 void			ft_free_tab(void **tab, int size);
+void			ft_free_bddstru(char **bdd, t_stru **stru);
+
 #endif

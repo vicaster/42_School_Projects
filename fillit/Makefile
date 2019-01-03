@@ -6,7 +6,7 @@
 #    By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/12/11 14:10:56 by vicaster     #+#   ##    ##    #+#        #
-#    Updated: 2018/12/18 16:37:44 by vicaster    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/01/03 15:19:00 by vicaster    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -43,7 +43,7 @@ WHITE = "\033[37m"
 NAME = fillit
 INC = fillit.h
 CC = gcc
-CFLAGS = -Wextra -Werror -Wall
+CFLAGS = -Wextra -Werror -Wall -g
 SRC =	check_tetri.c\
 		fillit.c\
 		ft_bdd.c\
@@ -59,7 +59,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 %.o: %.c fillit.h
-	$(CC) $(CFLAGS) -c $<
+	@$(CC) $(CFLAGS) -c $<
 	
 libft:
 	@cd libft && make rc

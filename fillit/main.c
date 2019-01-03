@@ -6,12 +6,18 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/11 14:03:48 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/18 18:13:14 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/03 17:00:35 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+void	ft_free_bddstru(char **bdd, t_stru **stru)
+{
+	ft_free_tab((void*)bdd, 19);
+	ft_free_tab((void*)stru, 27);
+}
 
 void	ft_free_tab(void **tab, int size)
 {
