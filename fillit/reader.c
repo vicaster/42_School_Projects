@@ -6,12 +6,20 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/11 14:11:35 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/01/03 17:11:23 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/03 18:03:59 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+void	opti_line(int *i, int ret[2], char **bdd, t_stru **stru)
+{
+	if (ret[0] == 0 && (*i == 0 || ret[1] != 20))
+		ft_free_bddstru(bdd, stru);
+	ret[0] == 0 && (*i == 0 || ret[1] != 20) ? ft_error() : 0;
+	stru[*i] = ft_stock(-1, -1, -1);
+}
 
 void	reader(int fd, char **bdd, int *i, t_stru **stru)
 {
@@ -38,8 +46,5 @@ void	reader(int fd, char **bdd, int *i, t_stru **stru)
 	}
 	if (*i > 26)
 		ft_error();
-	if (ret[0] == 0 && (*i == 0 || ret[1] != 20))
-		ft_free_bddstru(bdd, stru);
-	ret[0] == 0 && (*i == 0 || ret[1] != 20) ? ft_error() : 0;
-	stru[*i] = ft_stock(-1, -1, -1);
+	opti_line(i, ret, bdd, stru);
 }
