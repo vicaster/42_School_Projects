@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/11 14:03:48 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/01/03 17:00:35 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/04 14:31:51 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,6 +17,7 @@ void	ft_free_bddstru(char **bdd, t_stru **stru)
 {
 	ft_free_tab((void*)bdd, 19);
 	ft_free_tab((void*)stru, 27);
+	ft_error();
 }
 
 void	ft_free_tab(void **tab, int size)
