@@ -2,4 +2,4 @@ tout d'abord j'ai recupere l'adresse IP de slash16.org avec la commande ping:
 ping -c2 slash16.org
 
 puis j'ai effectue la commande whois avec l'adresse IP
-whois `ping -c2 slash16.org | grep seq=0 | cut -d ' ' -f4 | cut -d ':' -f1`
+whois `ping -c2 slash16.org | grep seq=0 | cut -d ' ' -f4 | cut -d ':' -f1` | grep -v "#"
