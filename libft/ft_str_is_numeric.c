@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strcspn.c                                     .::    .:/ .      .::   */
+/*   ft_str_is_numeric.c                              .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/25 13:31:41 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/02/18 17:09:16 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/01/23 18:58:20 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2019/01/23 18:59:06 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strcspn(const char *s1, const char *s2)
+int		ft_str_is_numeric(char *str)
 {
-	int i;
-	int j;
+	int		i;
 
 	i = 0;
-	j = 0;
-	while (s1[i])
+	if (str[i] == '\0')
+		return (0);
+	while (str[i])
 	{
-		while (s2[j] && s1[i] != s2[j])
-			j++;
-		if (s2[j] == s1[i])
-			return (i);
-		j = 0;
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
 		i++;
 	}
-	return (i);
+	return (1);
 }

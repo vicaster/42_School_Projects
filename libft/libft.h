@@ -6,14 +6,14 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/03 18:05:43 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/26 15:55:32 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/02/22 16:50:16 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define BUFF_SIZE 100
+# define BUFF_SIZE 4096
 
 # include <unistd.h>
 # include <string.h>
@@ -99,5 +99,7 @@ void				ft_push_back(t_list **begin_list, void *content);
 t_list				*ft_create_elem(void *content);
 void				ft_puttab(char **tab, int size);
 void				ft_print_tab(char **tab);
+char				*ft_strupcase(char *str);
+char				*ft_strlowcase(char *str);
 
 #endif
