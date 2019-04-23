@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   get_next_line.h                                  .::    .:/ .      .::   */
+/*   ft_strupcase.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/20 15:06:38 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/03/07 14:51:33 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/02/22 16:48:09 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2019/02/22 16:49:05 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+char	*ft_strupcase(char *str)
+{
+	int		i;
 
-# include "libft/libft.h"
-
-int				get_next_line(const int fd, char **line);
-
-#endif
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+		i++;
+	}
+	return (str);
+}

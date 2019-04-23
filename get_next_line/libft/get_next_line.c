@@ -6,12 +6,12 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/30 15:12:11 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/03/07 14:56:31 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/18 15:39:33 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static int	ft_fill_tmp(char **line, char **tmp)
 {

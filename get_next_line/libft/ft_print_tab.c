@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   get_next_line.h                                  .::    .:/ .      .::   */
+/*   ft_print_tab.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/20 15:06:38 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/03/07 14:51:33 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/26 15:48:05 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/12/03 12:12:10 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include "libft/libft.h"
+void	ft_print_tab(char **tab)
+{
+	int		i;
 
-int				get_next_line(const int fd, char **line);
-
-#endif
+	i = 0;
+	if (tab)
+	{
+		while (tab[i])
+		{
+			ft_putendl(tab[i]);
+			i++;
+		}
+	}
+	ft_putchar('\n');
+}

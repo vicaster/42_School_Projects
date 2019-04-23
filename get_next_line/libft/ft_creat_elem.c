@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   get_next_line.h                                  .::    .:/ .      .::   */
+/*   ft_creat_elem.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/20 15:06:38 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/03/07 14:51:33 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/07 15:58:02 by vicaster     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/07 15:58:54 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include "libft/libft.h"
+t_list		*ft_create_elem(void *content)
+{
+	t_list		*list;
 
-int				get_next_line(const int fd, char **line);
-
-#endif
+	if (!(list = malloc(sizeof(*list))))
+		return (0);
+	list->content = content;
+	list->next = NULL;
+	return (list);
+}

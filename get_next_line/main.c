@@ -6,14 +6,14 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/17 15:06:57 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/30 19:22:51 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/03/07 14:48:41 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <stdio.h>
-#include "gnl/get_next_line.h"
+#include "get_next_line.h"
 #include "libft/libft.h"
 #include <stdio.h>
 

@@ -6,13 +6,14 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/03 18:05:43 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/25 14:18:46 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/02/22 16:50:16 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 4096
 
 # include <unistd.h>
 # include <string.h>
@@ -85,7 +86,7 @@ size_t				ft_count_letter(const char *s, char c);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstadd(t_list **alst, t_list *nw);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				*ft_strrealloc(void *str, size_t size);
@@ -93,5 +94,12 @@ char				*ft_strcdup(const char *s1, size_t c);
 char				*ft_strccpy(char *dst, const char *src, int c);
 size_t				ft_strcspn(const char *s1, const char *s2);
 char				*ft_strndup(const char *s, size_t n);
+int					get_next_line(const int fd, char **line);
+void				ft_push_back(t_list **begin_list, void *content);
+t_list				*ft_create_elem(void *content);
+void				ft_puttab(char **tab, int size);
+void				ft_print_tab(char **tab);
+char				*ft_strupcase(char *str);
+char				*ft_strlowcase(char *str);
 
 #endif
