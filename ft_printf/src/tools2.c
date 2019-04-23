@@ -6,27 +6,12 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/02/08 17:56:55 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/03/06 18:29:49 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/11 18:28:32 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-t_stru	ft_add_begin(t_stru stru, char c)
-{
-	int		i;
-	int		j;
-	char	tmp[BUFF_SIZE];
-
-	i = 0;
-	j = 0;
-	ft_strcpy(tmp, stru.buff);
-	stru.buff[i++] = c;
-	while (tmp[j])
-		stru.buff[i++] = tmp[j++];
-	return (stru);
-}
 
 int		ft_count_zero(char *str)
 {
@@ -68,5 +53,36 @@ t_stru	ft_buff_null(t_stru stru)
 	stru.buff[4] = 'l';
 	stru.buff[5] = ')';
 	stru.buff[6] = '\0';
+	return (stru);
+}
+
+void	ft_itoabuff_base_uli(unsigned long n, int base, char *str)
+{
+	int					i;
+	unsigned long		digit;
+
+	i = 0;
+	while (n)
+	{
+		digit = n % base;
+		str[i++] = (digit > 9) ? (digit - 10) + 'a' : digit + '0';
+		n /= (unsigned long)base;
+	}
+	str[i] = '\0';
+	ft_strrev(str);
+}
+
+t_stru	ft_add_first(t_stru stru, char c)
+{
+	int		i;
+	int		j;
+	char	tmp[BUFF_SIZE_PRINTF];
+
+	i = 0;
+	j = 1;
+	ft_strcpy(tmp, stru.buff);
+	stru.buff[0] = c;
+	while (tmp[i])
+		stru.buff[j++] = tmp[i++];
 	return (stru);
 }

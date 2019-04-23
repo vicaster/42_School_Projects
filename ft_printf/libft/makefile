@@ -6,7 +6,7 @@
 #    By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/12/11 14:16:36 by vicaster     #+#   ##    ##    #+#        #
-#    Updated: 2019/02/22 16:52:17 by vicaster    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/04/08 19:11:32 by vicaster    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -50,7 +50,8 @@ SRC = ft_atoi.c ft_isdigit.c ft_memalloc.c ft_push_back.c ft_puttab.c ft_strdel.
 		ft_memdel.c ft_putnbr.c ft_strclr.c ft_strjoin.c ft_strnequ.c ft_strtrim.c ft_isalnum.c ft_lstiter.c\
 		ft_memmove.c ft_putnbr_fd.c ft_strcmp.c ft_strlcat.c ft_strnew.c ft_tolower.c ft_isalpha.c ft_lstmap.c\
 		ft_memset.c ft_putstr.c ft_strcpy.c ft_strlen.c ft_strnstr.c ft_toupper.c ft_isascii.c ft_lstnew.c ft_print_tab.c\
-		ft_putstr_fd.c ft_strcspn.c ft_strmap.c ft_strrchr.c get_next_line.c ft_str_is_numeric.c ft_strupcase.c ft_strlowcase.c
+		ft_putstr_fd.c ft_strcspn.c ft_strmap.c ft_strrchr.c get_next_line.c ft_str_is_numeric.c ft_strupcase.c ft_strlowcase.c\
+		ft_itoa_base.c
 
 OBJ = $(SRC:.c=.o)
 

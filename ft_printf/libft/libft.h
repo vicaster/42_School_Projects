@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/03 18:05:43 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/02/22 16:50:16 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/08 19:13:08 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,6 +26,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+char				*ft_itoa_base(long long int n, int base);
 int					ft_isalpha(int c);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strcat(char *s1, const char *s2);

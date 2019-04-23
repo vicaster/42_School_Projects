@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/23 18:27:22 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/03/11 15:35:20 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/12 15:46:39 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,6 +24,8 @@ t_stru	ft_init_stru(t_stru stru)
 	stru.preci = 0;
 	stru.size = 0;
 	stru.size_preci = 0;
+	stru.negative = 0;
+	ft_bzero(stru.buff, BUFF_SIZE_PRINTF);
 	return (stru);
 }
 
@@ -31,7 +33,7 @@ void	ft_add_beggin(t_stru stru)
 {
 	int		i;
 	int		j;
-	char	tmp[BUFF_SIZE];
+	char	tmp[BUFF_SIZE_PRINTF];
 
 	i = 0;
 	j = 0;
@@ -74,7 +76,7 @@ void	ft_itoabuff_base(long long n, int base, char *str)
 	ft_strrev(str);
 }
 
-t_stru	ft_swap_plus(t_stru stru, int nb)
+t_stru	ft_swap_plus(t_stru stru, long long nb)
 {
 	int		i;
 	int		j;
