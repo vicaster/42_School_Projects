@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/02/05 14:46:20 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/18 14:11:29 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/24 14:54:41 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -55,9 +55,9 @@ t_stru	ft_d_i(t_stru stru, va_list lst)
 		stru = ft_swap_char(stru, '0', ' ');
 	if (stru.plus == 1 && stru.preci == 1)
 		stru = ft_swap_char(stru, '+', '0');
-//	printf("buff: |%s|\n", stru.buff);
 	if (stru.zero == 1 && nb >= 0 && stru.larg != 0 && stru.esp == 1 && stru.larg >= ft_count_int(nb))
 		stru.buff[0] = ' ';
+	printf("buff: |%s|\n", stru.buff);
 //	else if (stru.preci == 1 && stru.esp == 1 && nb < 0)
 //		stru = ft_swap_char(stru, '-', '0');
 //	stru = ft_check_end(stru);
