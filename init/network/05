@@ -1,1 +1,0 @@
-ping -c 2 slash16.org | grep seq=0 | cut -d ' ' -f4 | cut -d ':' -f1

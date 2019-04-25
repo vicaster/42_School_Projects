@@ -1,1 +1,0 @@
-getent passwd | grep 100.: | cut -d ':' -f 1

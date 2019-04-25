@@ -1,3 +1,0 @@
-le chemin du fichier dans lequel est ecrit l'adresse IP du serveur DNS que j'utilise est:
-/etc/resolv.conf
-pour l'afficher il s'uffit de faire une commande "cat".

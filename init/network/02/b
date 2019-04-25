@@ -1,1 +1,0 @@
-ping -c 2 10.2.255.255 | arp -a | grep 10.2 | cut -d ' ' -f 2
