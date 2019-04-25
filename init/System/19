@@ -1,0 +1,13 @@
+root@debian:/home/vicaster# service --status-all
+ [ - ]  console-setup.sh
+ [ + ]  cron
+ [ + ]  dbus
+ [ - ]  hwclock.sh
+ [ + ]  irqbalance
+ [ - ]  keyboard-setup.sh
+ [ + ]  kmod
+ [ + ]  networking
+ [ + ]  procps
+ [ + ]  rsyslog
+ [ + ]  ssh
+ [ + ]  udev
