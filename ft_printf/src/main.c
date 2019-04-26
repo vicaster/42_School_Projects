@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/21 14:53:24 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/26 19:30:56 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/26 20:01:54 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -151,8 +151,8 @@ void		test_int(void)
 	retft += ft_printf("ft: |% 10.15d| |% 10.15d| |% 10.15d|\n", 4242, -4242, 0);
 	retor += printf(   "or: |% 10.15d| |% 10.15d| |% 10.15d|\n", 4242, -4242, 0);
 	printf("\n%i)\n", i++);//			31
-	retft += ft_printf("ft: |% 10.7d|  |% 10.7d|  |% 10.7d|\n", 4242, -4242, 0);
-	retor += printf(   "or: |% 10.7d|  |% 10.7d|  |% 10.7d|\n", 4242, -4242, 0);
+	retft += ft_printf("ft: |% 10.9d|  |% 10.9d|  |% 10.9d|\n", 4242, -4242, 0);
+	retor += printf(   "or: |% 10.9d|  |% 10.9d|  |% 10.9d|\n", 4242, -4242, 0);
 /*	printf("\n%i)\n", i++);//			32
  	retft += ft_printf("ft: | %d|\n", 101);
  	retor += printf(   "or: | %d|\n", 101);

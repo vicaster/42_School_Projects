@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/02/05 14:46:20 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/26 19:23:14 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/26 21:10:59 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,12 +35,6 @@ t_stru	ft_d_i(t_stru stru, va_list lst)
 	nb = va_arg(lst, int);
 	ft_itoabuff_base(nb, 10, stru.buff);
 	stru = ft_parse_ignore(stru);
-	if (stru.esp == 1 && stru.larg == 0 && nb >= 0)
-		stru = ft_resolve_esp(stru, nb);
-	else if (stru.esp == 1 && stru.larg != 0 && stru.moins == 1 && nb >= 0)
-		stru = ft_resolve_esp(stru, nb);
-	else if (stru.esp == 1 && stru.larg != 0 && nb >= 0 && stru.larg < ft_count_int(nb))
-		stru = ft_resolve_esp(stru, nb);
 	if (stru.plus == 1 && nb >= 0)
 		stru = ft_resolve_plus(stru, nb);
 	if (stru.preci == 1)
@@ -64,11 +58,18 @@ t_stru	ft_d_i(t_stru stru, va_list lst)
 		stru.buff[ft_strlen(stru.buff) - 1] = '+';
 	if (stru.plus == 1 && stru.preci == 1 && stru.size_preci == 0 && nb == 0)
 		stru.buff[ft_strlen(stru.buff) - 2] = ' ';
-	if (stru.esp == 1 && stru.preci == 1 && stru.size_preci != 0 && nb >= 0)
+//##########################################################################################################################
+	if (stru.esp == 1 && stru.larg == 0 && nb >= 0 && stru.size_preci >= stru.larg)
 		stru = ft_resolve_esp(stru, nb);
-	//	else if (stru.preci == 1 && stru.esp == 1 && nb < 0)
-	//		stru = ft_swap_char(stru, '-', '0');
-	//	stru = ft_check_end(stru);
+	else if (stru.esp == 1 && stru.larg == 0 && nb >= 0)
+		stru = ft_resolve_esp(stru, nb);
+	if (stru.esp == 1 && stru.larg != 0 && stru.moins == 1 && nb >= 0 && stru.size_preci >= stru.larg)
+		stru = ft_resolve_esp(stru, nb);
+	else if (stru.esp == 1 && stru.larg != 0 && nb >= 0 && stru.larg < ft_count_int(nb) && stru.size_preci >= stru.larg)
+		stru = ft_resolve_esp(stru, nb);
+	else if (stru.esp == 1 && stru.preci == 1 && stru.size_preci != 0 && nb >= 0 && stru.size_preci >= stru.larg)
+		stru = ft_resolve_esp(stru, nb);
+//##########################################################################################################################
 	stru.ret += ft_strlen(stru.buff);
 	ft_putstr(stru.buff);
 	return (stru);
