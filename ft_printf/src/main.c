@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/21 14:53:24 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/24 14:52:33 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/26 19:30:56 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -57,14 +57,7 @@ void		test_int(void)
 
 	retft = 0;
 	retor = 0;
-	i = 1;
-
-
-
-
-
-
-	
+	i = 1;	
 	ft_printf("\033[31m**************INT****************\n");
 
 	printf("\n%i)\n", i++);//			1
@@ -116,51 +109,51 @@ void		test_int(void)
  	retft += ft_printf("ft: |%0 20d|  |%0 20d|  |%0 20d|\n", 101, -101, 0);
  	retor += printf(   "or: |%0 20d|  |%0 20d|  |%0 20d|\n", 101, -101, 0);
 	printf("\n%i)\n", i++);//			17
- 	retft += ft_printf("ft: |%0 33d|\n", 256);
- 	retor += printf(   "or: |%0 33d|\n", 256);
+ 	retft += ft_printf("ft: |%0 33d| |%0 33d| |%0 33d|\n", 256, -256, 0);
+ 	retor += printf(   "or: |%0 33d| |%0 33d| |%0 33d|\n", 256, -256, 0);
 	printf("\n%i)\n", i++);//			18
-	retft += ft_printf("ft: |%+07.5d|   |%+07.5d|\n", 0, -0);
-	retor += printf(   "or: |%+07.5d|   |%+07.5d|\n", 0, -0);
+	retft += ft_printf("ft: |%+07.5d|  |%+07.5d|\n", 0, -0);
+	retor += printf(   "or: |%+07.5d|  |%+07.5d|\n", 0, -0);
 	printf("\n%i)\n", i++);//			19
-	retft += ft_printf("ft: |%07.d|   |%07.d|\n", 0, -0);
-	retor += printf(   "or: |%07.d|   |%07.d|\n", 0, -0);
+	retft += ft_printf("ft: |%07.d|  |%07.d|\n", 0, -0);
+	retor += printf(   "or: |%07.d|  |%07.d|\n", 0, -0);
 	printf("\n%i)\n", i++);//			20
-	retft += ft_printf("ft: |%030.d|   |%030.d|\n", 987, -987);
-	retor += printf(   "or: |%030.d|   |%030.d|\n", 987, -987);
+	retft += ft_printf("ft: |%030.d|  |%030.d|  |%030.d|\n", 987, -987, 0);
+	retor += printf(   "or: |%030.d|  |%030.d|  |%030.d|\n", 987, -987, 0);
 	printf("\n%i)\n", i++);//			21
-	retft += ft_printf("ft: |%010d|\n", -42);
-	retor += printf(   "or: |%010d|\n", -42);
+	retft += ft_printf("ft: |%010d| |%010d| |%010d|\n", 42, -42, 0);
+	retor += printf(   "or: |%010d| |%010d| |%010d|\n", 42, -42, 0);
 	printf("\n%i)\n", i++);//			22
-	retft += ft_printf("ft: |%010i|\n", 59);
-	retor += printf(   "or: |%010i|\n", 59);
+	retft += ft_printf("ft: |%010i| |%010i| |%010i|\n", 59, -59, 0);
+	retor += printf(   "or: |%010i| |%010i| |%010i|\n", 59, -59, 0);
 	printf("\n%i)\n", i++);//			23
-	retft += ft_printf("ft: |%+07d|   |%+07d|\n", 56, -56);
-	retor += printf(   "or: |%+07d|   |%+07d|\n", 56, -56);
-/*	printf("\n%i)\n", i++);//			24
-	retft += ft_printf("ft: |% 015i|\n", 0);
-	retor += printf(   "or: |% 015i|\n", 0);
+	retft += ft_printf("ft: |%+07d|  |%+07d|  |%+07d|\n", 56, -56, 0);
+	retor += printf(   "or: |%+07d|  |%+07d|  |%+07d|\n", 56, -56, 0);
+	printf("\n%i)\n", i++);//			24
+	retft += ft_printf("ft: |% 015i| |% 015i| |% 015i|\n", 101, -101, 0);
+	retor += printf(   "or: |% 015i| |% 015i| |% 015i|\n", 101, -101, 0);
 	printf("\n%i)\n", i++);//			25
-	retft += ft_printf("ft: |%0d|   |%0d|\n", 56, -56);
-	retor += printf(   "or: |%0d|   |%0d|\n", 56, -56);
+	retft += ft_printf("ft: |%0d|  |%0d|  |%0d|\n", 56, -56, 0);
+	retor += printf(   "or: |%0d|  |%0d|  |%0d|\n", 56, -56, 0);
 	printf("\n%i)\n", i++);//			26
-	retft += ft_printf("ft: |%0+7.15d|   |%0+7.15d|\n", 56, -56);
-	retor += printf(   "or: |%0+7.15d|   |%0+7.15d|\n", 56, -56);
+	retft += ft_printf("ft: |%0+7.15d|   |%0+7.15d|  |%0+7.15d|\n", 56, -56, 0);
+	retor += printf(   "or: |%0+7.15d|   |%0+7.15d|  |%0+7.15d|\n", 56, -56, 0);
 	printf("\n%i)\n", i++);//			27
-	retft += ft_printf("ft: |%0+7.5d|   |%0+7.5d|\n", 56, -56);
-	retor += printf(   "or: |%0+7.5d|   |%0+7.5d|\n", 56, -56);
+	retft += ft_printf("ft: |%0+7.5d|   |%0+7.5d|  |%0+7.5d|\n", 56, -56, 0);
+	retor += printf(   "or: |%0+7.5d|   |%0+7.5d|  |%0+7.5d|\n", 56, -56, 0);
 	printf("\n%i)\n", i++);//			28
-	retft += ft_printf("ft: |%0+7.d|   |%0+7.d|\n", 56, -56);
-	retor += printf(   "or: |%0+7.d|   |%0+7.d|\n", 56, -56);
+	retft += ft_printf("ft: |%0+7.d|   |%0+7.d|  |%0+7.d|\n", 56, -56, 0);
+	retor += printf(   "or: |%0+7.d|   |%0+7.d|  |%0+7.d|\n", 56, -56, 0);
 	printf("\n%i)\n", i++);//			29
-	retft += ft_printf("ft: |%+10.5d|\n", 4242);
- 	retor += printf(   "or: |%+10.5d|\n", 4242);
+	retft += ft_printf("ft: |%+10.5d| |%+10.5d| |%+10.5d|\n", 4242, -4242, 0);
+ 	retor += printf(   "or: |%+10.5d| |%+10.5d| |%+10.5d|\n", 4242, -4242, 0);
 	printf("\n%i)\n", i++);//			30
-	retft += ft_printf("ft: |% 10.15d|\n", 4242);
-	retor += printf(   "or: |% 10.15d|\n", 4242);
+	retft += ft_printf("ft: |% 10.15d| |% 10.15d| |% 10.15d|\n", 4242, -4242, 0);
+	retor += printf(   "or: |% 10.15d| |% 10.15d| |% 10.15d|\n", 4242, -4242, 0);
 	printf("\n%i)\n", i++);//			31
-	retft += ft_printf("ft: |% 10.7d|  |% 10.5d|\n", -4242, -4242);
-	retor += printf(   "or: |% 10.7d|  |% 10.5d|\n", -4242, -4242);
-	printf("\n%i)\n", i++);//			32
+	retft += ft_printf("ft: |% 10.7d|  |% 10.7d|  |% 10.7d|\n", 4242, -4242, 0);
+	retor += printf(   "or: |% 10.7d|  |% 10.7d|  |% 10.7d|\n", 4242, -4242, 0);
+/*	printf("\n%i)\n", i++);//			32
  	retft += ft_printf("ft: | %d|\n", 101);
  	retor += printf(   "or: | %d|\n", 101);
 	printf("\n%i)\n", i++);//			33

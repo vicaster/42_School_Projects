@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/02/05 14:46:20 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/24 20:15:25 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/26 19:23:14 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -51,16 +51,24 @@ t_stru	ft_d_i(t_stru stru, va_list lst)
 		stru = ft_resolve_larg(stru, nb);
 	if (stru.moins == 1 && stru.larg > 0)
 		stru = ft_resolve_moins(stru, nb);
-	if (stru.preci == 1 && stru.esp == 1 && nb > 0)
+	//	printf("buff: |%s|\n", stru.buff);
+	if (stru.preci == 1 && stru.esp == 1 && nb > 0 && stru.esp == 0)
 		stru = ft_swap_char(stru, '0', ' ');
-	if (stru.plus == 1 && stru.preci == 1)
+	if (stru.plus == 1 && stru.preci == 1 && nb >= 0 && stru.size_preci != 0)
 		stru = ft_swap_char(stru, '+', '0');
 	if (stru.zero == 1 && nb >= 0 && stru.larg != 0 && stru.esp == 1 && stru.larg >= ft_count_int(nb))
 		stru.buff[0] = ' ';
-	printf("buff: |%s|\n", stru.buff);
-//	else if (stru.preci == 1 && stru.esp == 1 && nb < 0)
-//		stru = ft_swap_char(stru, '-', '0');
-//	stru = ft_check_end(stru);
+	if (stru.preci == 1 && stru.size_preci == 0 && nb == 0)
+		stru.buff[ft_strlen(stru.buff) - 1] = ' ';
+	if (stru.plus == 1 && stru.preci == 1 && stru.size_preci == 0 && nb == 0)
+		stru.buff[ft_strlen(stru.buff) - 1] = '+';
+	if (stru.plus == 1 && stru.preci == 1 && stru.size_preci == 0 && nb == 0)
+		stru.buff[ft_strlen(stru.buff) - 2] = ' ';
+	if (stru.esp == 1 && stru.preci == 1 && stru.size_preci != 0 && nb >= 0)
+		stru = ft_resolve_esp(stru, nb);
+	//	else if (stru.preci == 1 && stru.esp == 1 && nb < 0)
+	//		stru = ft_swap_char(stru, '-', '0');
+	//	stru = ft_check_end(stru);
 	stru.ret += ft_strlen(stru.buff);
 	ft_putstr(stru.buff);
 	return (stru);

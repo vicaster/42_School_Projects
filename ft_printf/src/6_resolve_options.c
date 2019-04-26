@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/02/05 16:24:34 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/24 20:15:28 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/16 18:34:19 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -97,6 +97,5 @@ t_stru	ft_resolve_preci_int(t_stru stru, long long nb)
 		j++;
 	while (tmp[j])
 		stru.buff[i++] = tmp[j++];
-	if ()
 	return (stru);
 }
