@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/21 15:34:39 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/16 13:47:06 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/27 19:27:04 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -63,6 +63,7 @@ t_stru				ft_pointer(t_stru stru, va_list lst);
 t_stru				ft_longlong(t_stru stru, va_list lst);
 
 t_stru				ft_resolve_zero(t_stru stru, long long nb);
+t_stru				ft_resolve_zero_int(t_stru stru, long long nb);
 t_stru				ft_resolve_esp(t_stru stru, long long nb);
 t_stru				ft_resolve_moins(t_stru stru, long long nb);
 t_stru				ft_resolve_plus(t_stru stru, long long nb);

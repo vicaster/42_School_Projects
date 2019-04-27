@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/03/01 17:11:49 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/12 14:49:09 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/27 18:31:51 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,8 +28,6 @@ t_stru	ft_string(t_stru stru, va_list lst)
 	else
 		ft_strcpy(stru.buff, str);
 	stru = ft_parse_ignore(stru);
-	if (stru.plus == 1)
-		stru = ft_resolve_plus(stru, nb);
 	if (stru.esp == 1 && stru.plus == 0)
 		stru = ft_resolve_esp(stru, nb);
 	if (stru.preci == 1)

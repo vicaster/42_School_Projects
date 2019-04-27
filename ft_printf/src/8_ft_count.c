@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/03/04 14:36:44 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/16 18:33:18 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/27 18:42:39 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -42,6 +42,8 @@ t_stru		ft_countmoins(t_stru stru, long long nb)
 	else if (stru.type == 's')
 		stru.count = stru.larg - nb;
 	else if (stru.type == 'o' || stru.type == 'p')
+		stru.count = stru.larg - ft_strlen(stru.buff);
+	else if ((stru.type == 'd' || stru.type == 'i') && stru.plus == 1)
 		stru.count = stru.larg - ft_strlen(stru.buff);
 	return (stru);
 }
