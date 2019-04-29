@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/04/12 15:40:14 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/15 20:26:49 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/29 18:51:38 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,6 +19,16 @@ t_stru		ft_swap_char(t_stru stru, char a, char b)
 	int		tmp_b;
 	int		i;
 
+	i = 0;
+	while (stru.buff[i++])
+	{
+		if (stru.buff[i] == a)
+			tmp_a = 1;
+		if (stru.buff[i] == b)
+			tmp_b = 1;
+	}
+	if (tmp_a != 1 || tmp_b != 1)
+		return (stru);
 	i = 0;
 	while (stru.buff[i] && stru.buff[i] != a)
 		i++;

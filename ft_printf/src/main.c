@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/21 14:53:24 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/27 19:20:23 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/29 18:56:01 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -61,9 +61,15 @@ void		test_int(void)
 	ft_printf("\033[31m**************INT****************\n");
 
 	printf("\n%i)\n", i++);//			1
-	retft += ft_printf("ft: |%09d|   |%09d|  |%09d|\n", 56, -56, 0);
-	retor += printf(   "or: |%09d|   |%09d|  |%09d|\n", 56, -56, 0);
-/*	printf("\n%i)\n", i++);//			2
+	retft += ft_printf("ft: |%+01d|   |%+01d|  |%+01d|\n", 56, -56, 0);
+	retor += printf(   "or: |%+01d|   |%+01d|  |%+01d|\n", 56, -56, 0);
+	printf("\n%i)\n", i++);//			1
+	retft += ft_printf("ft: |%+02d|   |%+02d|  |%+02d|\n", 56, -56, 0);
+	retor += printf(   "or: |%+02d|   |%+02d|  |%+02d|\n", 56, -56, 0);
+	printf("\n%i)\n", i++);//			1
+	retft += ft_printf("ft: |%+05d|   |%+05d|  |%+05d|\n", 56, -56, 0);
+	retor += printf(   "or: |%+05d|   |%+05d|  |%+05d|\n", 56, -56, 0);
+	printf("\n%i)\n", i++);//			2
 	retft += ft_printf("ft: |%5d|   |%5d|  |%5d|\n", 56, -56, 0);
 	retor += printf(   "or: |%5d|   |%5d|  |%5d|\n", 56, -56, 0);
 	printf("\n%i)\n", i++);//			3
@@ -135,7 +141,7 @@ void		test_int(void)
 	printf("\n%i)\n", i++);//			25
 	retft += ft_printf("ft: |%0d|  |%0d|  |%0d|\n", 56, -56, 0);
 	retor += printf(   "or: |%0d|  |%0d|  |%0d|\n", 56, -56, 0);
-	printf("\n%i)\n", i++);//			26
+/*	printf("\n%i)\n", i++);//			26
 	retft += ft_printf("ft: |%0+7.15d|   |%0+7.15d|  |%0+7.15d|\n", 56, -56, 0);
 	retor += printf(   "or: |%0+7.15d|   |%0+7.15d|  |%0+7.15d|\n", 56, -56, 0);
 	printf("\n%i)\n", i++);//			27

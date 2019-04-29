@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/24 14:26:11 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/12 16:46:52 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/29 15:28:52 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -65,7 +65,6 @@ t_stru	check_opt(const char *format, t_stru stru)
 	int		i;
 
 	i = 0;
-//	printf("\nformat: |%s|\n", format);
 	if (ft_isdigit(format[i]) == 1 && format[i] != '0')
 	{
 		stru.larg = ft_atoi(format);
