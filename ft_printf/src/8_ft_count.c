@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/03/04 14:36:44 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/29 18:27:26 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/05/02 14:51:35 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -61,6 +61,8 @@ t_stru		ft_countzero(t_stru stru, long long nb)
 		stru.count = stru.larg - ft_count_int(nb);
 	if ((stru.type == 'd' || stru.type == 'i') && stru.zero == 1 && nb == 0 && stru.plus == 1)
 		stru.count = stru.larg - ft_count_int(nb) - stru.plus;
+	if ((stru.type == 'd' || stru.type == 'i') && stru.zero == 1 && nb >= 0 && stru.esp == 1)
+		stru.count = stru.larg - ft_count_int(nb) - stru.esp;
 	return (stru);
 }
 

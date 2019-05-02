@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/21 15:34:39 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/27 19:27:04 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/05/02 18:45:32 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -88,5 +88,6 @@ t_stru				ft_buff_null(t_stru stru);
 t_stru				ft_add_first(t_stru stru, char c);
 t_stru				ft_swap_char(t_stru stru, char a, char b);
 t_stru				ft_check_end(t_stru stru);
+t_stru				ft_replace(t_stru stru, char a, char b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/04/12 15:40:14 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/29 18:51:38 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/05/02 18:53:24 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -59,5 +59,17 @@ t_stru		ft_check_end(t_stru stru)
 		if (stru.buff[i] == ' ')
 			stru.buff[i] = '-';
 	}
+	return (stru);
+}
+
+t_stru		ft_replace(t_stru stru, char a, char b)
+{
+	int		i;
+
+	i = 0;
+	while (stru.buff[i] && stru.buff[i] != a)
+		i++;
+	if (stru.buff[i])
+		stru.buff[i] = b;
 	return (stru);
 }
