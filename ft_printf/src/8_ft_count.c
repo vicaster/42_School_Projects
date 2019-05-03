@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/03/04 14:36:44 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/02 14:51:35 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/05/03 15:24:57 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -71,6 +71,8 @@ t_stru		ft_countpreci(t_stru stru, long long nb)
 	stru.count = stru.size_preci - ft_count_int(nb);
 	if ((stru.type == 'i' || stru.type == 'd') && nb < 0)
 		stru.count = stru.size_preci - ft_count_int(nb) + 1;
+	else if ((stru.type == 'i' || stru.type == 'd') && nb >= 0)
+		stru.count = stru.size_preci - stru.larg - ft_count_int(nb);
 	if (stru.type == 'x' || stru.type == 'X')
 	{
 		if (nb == 0 && stru.size_preci == 0)
@@ -83,7 +85,5 @@ t_stru		ft_countpreci(t_stru stru, long long nb)
 		stru.count = stru.size_preci;
 	else if (stru.type == 'o')
 		stru.count = stru.size_preci - ft_strlen(stru.buff);
-	else if ((stru.type == 'i' || stru.type == 'd') && (stru.size == 'l' || stru.size == 'L'))
-		stru.count = stru.size_preci - ft_strlen(stru.buff) + 1;
 	return (stru);
 }

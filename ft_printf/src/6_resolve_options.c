@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/02/05 16:24:34 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/02 18:56:15 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/05/03 17:48:16 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -109,8 +109,8 @@ t_stru	ft_resolve_preci_int(t_stru stru, long long nb)
 		stru = ft_swap_char(stru, '+', '0');
 	if (stru.size_preci == 0 && stru.larg != 0 && nb == 0 && stru.plus == 0)
 		stru = ft_replace(stru, '0', ' ');
-//	if (stru.size_preci == 0 && stru.larg != 0 && nb == 0 && stru.plus == 1)
-//		stru = ft_replace(stru, '0', '+');
+	if (stru.size_preci == 0 && stru.larg != 0 && nb == 0 && stru.plus == 1)
+		stru = ft_replace(stru, '0', '+');
 	return (stru);
 }
 

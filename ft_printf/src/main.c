@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/21 14:53:24 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/02 18:56:01 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/05/03 17:32:16 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -203,11 +203,11 @@ void		test_int(void)
 	retft += ft_printf("ft: |%+2.0i| |%+2.0i| |%+2.0i|\n", 101, -101, 0);
 	retor += printf(   "or: |%+2.0i| |%+2.0i| |%+2.0i|\n", 101, -101, 0);
 	printf("\n%i)\n", i++);//			48
-	retft += ft_printf("ft: |%+5.0i| |%+5.0i| |%+5.0i|\n", 101, -101, 0);
-	retor += printf(   "or: |%+5.0i| |%+5.0i| |%+5.0i|\n", 101, -101, 0);
+	retft += ft_printf("ft: |%+7.4i| |%+7.4i| |%+7.4i|\n", 101, -101, 0);
+	retor += printf(   "or: |%+7.4i| |%+7.4i| |%+7.4i|\n", 101, -101, 0);
 	printf("\n%i)\n", i++);//			49
-	retft += ft_printf("ft: |% 19.15d|\n", 'z');
- 	retor += printf(   "or: |% 19.15d|\n", 'z');
+	retft += ft_printf("ft: |%+15.0i| |%+15.0i| |%+15.0i|\n", 101, -101, 0);
+ 	retor += printf(   "or: |%+15.0i| |%+15.0i| |%+15.0i|\n", 101, -101, 0);
 	printf("\n%i)\n", i++);//			50
  	retft += ft_printf("ft: |% -16.5d|\n", 'z');
  	retor += printf(   "or: |% -16.5d|\n", 'z');
