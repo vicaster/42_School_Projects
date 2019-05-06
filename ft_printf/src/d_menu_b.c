@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   5_ft_menu2.c                                     .::    .:/ .      .::   */
+/*   d_b_menu.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/03/01 17:11:49 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/27 18:31:51 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/05/06 17:56:20 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-t_stru	ft_string(t_stru stru, va_list lst)
+t_stru		ft_string(t_stru stru, va_list lst)
 {
-	char 	*str;
+	char	*str;
 	int		nb;
 
 	str = va_arg(lst, char*);
@@ -108,4 +108,19 @@ t_stru	ft_longlong(t_stru stru, va_list lst)
 	stru.ret += ft_strlen(stru.buff);
 	ft_putstr(stru.buff);
 */	return (stru);
+}
+
+t_stru	ft_percent(t_stru stru)
+{
+	stru = ft_parse_ignore(stru);
+	stru.buff[0] = '%';
+	if (stru.zero == 1)
+		stru = ft_resolve_zero(stru, 0);
+	if (stru.larg != 0)
+		stru = ft_resolve_larg(stru, 0);
+	if (stru.moins == 1 && stru.larg > 0)
+		stru = ft_resolve_moins(stru, 0);
+	stru.ret += ft_strlen(stru.buff);
+	ft_putstr(stru.buff);
+	return (stru);
 }

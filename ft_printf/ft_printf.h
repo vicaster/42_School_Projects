@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/21 15:34:39 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/02 18:45:32 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/05/06 17:58:00 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -55,6 +55,7 @@ t_stru				check_type(const char *format, t_stru stru);
 t_stru				resolve_printf(t_stru stru, va_list lst);
 t_stru				ft_percent(t_stru stru);
 t_stru				ft_d_i(t_stru stru, va_list lst);
+t_stru				ft_d_i_next(t_stru stru, va_list lst);
 t_stru				ft_octal(t_stru stru, va_list lst);
 t_stru				ft_hexa(t_stru stru, va_list lst);
 t_stru				ft_char(t_stru stru, va_list lst);

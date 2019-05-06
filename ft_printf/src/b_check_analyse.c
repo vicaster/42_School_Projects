@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   2_check_analyse.c                                .::    .:/ .      .::   */
+/*   b_check_analyse.c                                .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/24 14:26:11 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/29 15:28:52 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/05/06 15:29:55 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,9 +16,11 @@
 t_stru	check_type(const char *format, t_stru stru)
 {
 	stru.type = format[0];
-//	printf("\nsharp: %d\nzero: %d\nmoins: %d\nplus: %d\nesp: %d\ncount: %d\n", stru.sharp, stru.zero, stru.moins, stru.plus, stru.esp, stru.count);
-//	printf("\nlarg: %d\nsize : %c\npreci : %d\nsize_preci: %d\ntype : %c\n\n", stru.larg, stru.size, stru.preci, stru.size_preci, stru.type);
-//	exit(0);
+/*
+	printf("\nsharp: %d\nzero: %d\nmoins: %d\nplus: %d\nesp: %d\ncount: %d\n", stru.sharp, stru.zero, stru.moins, stru.plus, stru.esp, stru.count);
+	printf("\nlarg: %d\nsize : %c\npreci : %d\nsize_preci: %d\ntype : %c\n\n", stru.larg, stru.size, stru.preci, stru.size_preci, stru.type);
+	exit(0);
+*/
 	return (stru);
 }
 
@@ -70,7 +72,8 @@ t_stru	check_opt(const char *format, t_stru stru)
 		stru.larg = ft_atoi(format);
 		stru.i += ft_count_int(stru.larg);
 	}
-	while (format[i] == '#' || format[i] == '0' || format[i] == '-' || format[i] == '+' || format[i] == ' ')
+	while (format[i] == '#' || format[i] == '0' || format[i] == '-' ||
+	format[i] == '+' || format[i] == ' ')
 	{
 		if (format[i] == '#')
 			stru = ft_sharp(format + i, stru);
