@@ -6,7 +6,7 @@
 #    By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/12/11 14:10:56 by vicaster     #+#   ##    ##    #+#        #
-#    Updated: 2019/04/12 16:29:30 by vicaster    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/05/06 15:14:50 by vicaster    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -44,10 +44,9 @@ NAME = ft_printf
 CC = gcc
 FLAG = -Wall -Wextra -Werror -g
 FLAG2 = -fsanitize=address
-SRC =	src/2_check_analyse.c src/1_ft_printf.c src/main.c src/2_options.c\
-		src/tools.c src/3_resolve_printf.c src/4_ft_menu.c src/6_resolve_options.c\
-		src/tools2.c src/7_resolve_options2.c src/5_ft_menu2.c src/8_ft_count.c\
-		src/tools3.c
+SRC =	src/a_ft_printf.c src/b_check_analyse.c src/b_options.c src/c_resolve_printf.c\
+src/d_ft_menu.c src/d_ft_menu_next.c src/e_resolve_options.c src/f_resolve_options2.c\
+src/g_ft_count.c src/main.c src/tools_a.c src/tools_b.c src/tools_c.c
 OBJ = $(SRC:.c=.o)
 LFTDIR = libft
 INC = -I./$(LFTDIR) -I.
