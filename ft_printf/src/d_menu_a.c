@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/02/05 14:46:20 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/06 18:24:32 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/05/07 19:22:26 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -34,13 +34,17 @@ t_stru	ft_d_i(t_stru stru, va_list lst)
 		stru = ft_resolve_zero_int(stru, nb);
 	if (stru.preci == 1 && stru.size_preci == 0 && nb == 0 && stru.larg == 0)
 		stru.buff[0] = '\0';
+	stru = ft_d_i_next(stru, lst, nb);
 	return (stru);
 }
 
-t_stru	ft_d_i_next(t_stru stru, va_list lst)
+t_stru	ft_d_i_next(t_stru stru, va_list lst, int nb)
 {
-//	if (stru.preci == 1 && stru.plus == 1)
-//		stru = ft_resolve_preci_int_plus();
+	if (stru.preci == 1 && stru.plus == 1 && nb == 0)
+	{
+		stru = ft_replace(stru, '+', ' ');
+		stru = ft_put_char_at_end(stru, '+');
+	}
 	stru.ret += ft_strlen(stru.buff);
 	ft_putstr(stru.buff);
 	return (stru);

@@ -6,7 +6,7 @@
 #    By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/12/11 14:10:56 by vicaster     #+#   ##    ##    #+#        #
-#    Updated: 2019/05/06 18:00:16 by vicaster    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/05/07 18:23:56 by vicaster    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -45,7 +45,7 @@ CC = gcc
 FLAG = -Wall -Wextra -Werror -g
 FLAG2 = -fsanitize=address
 SRC =	src/a_ft_printf.c src/b_check_analyse.c src/b_options.c src/c_resolve_printf.c\
-src/d_menu_a.c src/d_menu_b.c src/e_resolve_options.c src/f_resolve_options2.c\
+src/d_menu_a.c src/d_menu_b.c src/e_resolve_options.c src/f_resolve_options.c\
 src/g_ft_count.c src/main.c src/tools_a.c src/tools_b.c src/tools_c.c
 OBJ = $(SRC:.c=.o)
 LFTDIR = libft

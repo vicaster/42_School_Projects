@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   8_ft_count.c                                     .::    .:/ .      .::   */
+/*   g_ft_count.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/03/04 14:36:44 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/03 15:24:57 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/05/07 18:33:00 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,11 +15,11 @@
 
 t_stru		ft_countlarg(t_stru stru, long long nb)
 {
-//	if (stru.count == 'i' || stru.count == 'd')
 	stru.count = stru.larg - ft_strlen(stru.buff);
 	if (stru.type == 'x' || stru.type == 'X')
 		stru.count = stru.larg - ft_strlen(stru.buff) - stru.esp;
-	if (stru.plus == 1 && nb > 0 && stru.type != 'x' && stru.type != 'X' && stru.type != 'p')
+	if (stru.plus == 1 && nb > 0 && stru.type != 'x' && stru.type != 'X' &&
+    stru.type != 'p' && stru.type != 'd' && stru.type != 'i')
 		stru.count = stru.larg - ft_count_int(nb) - ft_count_zero(stru.buff) - 1 - stru.esp;
 	if (stru.type == 's' && stru.preci != 0)
 		stru.count = stru.larg - stru.size_preci;

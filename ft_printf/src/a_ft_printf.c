@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/21 15:05:14 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/06 15:27:44 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/05/07 19:12:48 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -37,9 +37,10 @@ int		ft_printf(const char *format, ...)
 			stru = resolve_printf(stru, lst);
 		}
 		else if (format[stru.i] != '%')
+		{
 			ft_putchar(format[stru.i]);
-		if (format[stru.i] != '%')
 			stru.ret += 1;
+		}
 		stru.i++;
 	}
 	va_end(lst);
