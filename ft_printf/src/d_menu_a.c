@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/02/05 14:46:20 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/07 19:22:26 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/05/07 19:35:30 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,6 +28,7 @@ t_stru	ft_d_i(t_stru stru, va_list lst)
 		stru = ft_resolve_esp(stru, nb);
 	if (stru.larg != 0 && stru.zero == 0)
 		stru = ft_resolve_larg(stru, nb);
+//	printf("buff: |%s|\n", stru.buff);
 	if (stru.moins == 1)
 		stru = ft_resolve_moins(stru, nb);
 	if (stru.zero == 1 && stru.larg >= ft_strlen(stru.buff))

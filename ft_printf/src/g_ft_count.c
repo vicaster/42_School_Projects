@@ -73,6 +73,9 @@ t_stru		ft_countpreci(t_stru stru, long long nb)
 		stru.count = stru.size_preci - ft_count_int(nb) + 1;
 	else if ((stru.type == 'i' || stru.type == 'd') && nb >= 0)
 		stru.count = stru.size_preci - stru.larg - ft_count_int(nb);
+	if ((stru.type == 'i' || stru.type == 'd') && nb >= 0 && stru.larg != 0)
+		stru.count = stru.size_preci - ft_count_int(nb);
+//	printf("\n                 count: |%d|\n", stru.count);
 	if (stru.type == 'x' || stru.type == 'X')
 	{
 		if (nb == 0 && stru.size_preci == 0)

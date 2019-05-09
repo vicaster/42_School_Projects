@@ -105,8 +105,6 @@ t_stru	ft_resolve_preci_int(t_stru stru, long long nb)
 		stru.buff[i++] = tmp[j++];
 	if (nb < 0 && stru.size_preci - ft_count_int(nb) > 0)
 		stru = ft_swap_char(stru, '-', '0');
-	if (stru.plus == 1)
-		stru = ft_swap_char(stru, '+', '0');
 	if (stru.size_preci == 0 && stru.larg != 0 && nb == 0 && stru.plus == 0)
 		stru = ft_replace(stru, '0', ' ');
 	if (stru.size_preci == 0 && stru.larg != 0 && nb == 0 && stru.plus == 1)
