@@ -13,7 +13,7 @@
 
 #include "../ft_printf.h"
 
-t_stru	ft_have_percent(t_stru stru, char *format)
+t_stru	ft_have_percent(t_stru stru, const char *format)
 {
 	stru = ft_init_stru(stru);
 	stru = check_opt(format + stru.i, stru);
