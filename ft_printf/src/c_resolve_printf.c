@@ -20,9 +20,6 @@ t_stru	resolve_printf(t_stru stru, va_list lst)
 	if ((stru.type == 'd' || stru.type == 'i') &&
 	stru.size != 'l' && stru.size != 'L')
 		stru = ft_d_i(stru, lst);
-	if ((stru.type == 'd' || stru.type == 'i') &&
-	(stru.size == 'l' || stru.size == 'L'))
-		stru = ft_longlong(stru, lst);
 	if (stru.type == 'o')
 		stru = ft_octal(stru, lst);
 	if (stru.type == 'x' || stru.type == 'X')
@@ -33,5 +30,7 @@ t_stru	resolve_printf(t_stru stru, va_list lst)
 		stru = ft_string(stru, lst);
 	if (stru.type == 'p')
 		stru = ft_pointer(stru, lst);
+	if (stru.type == 'u')
+		stru = ft_unsigned(stru, lst);
 	return (stru);
 }

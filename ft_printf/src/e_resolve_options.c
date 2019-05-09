@@ -103,11 +103,11 @@ t_stru	ft_resolve_preci_int(t_stru stru, long long nb)
 		tmp[0] = ' ';
 	while (tmp[j])
 		stru.buff[i++] = tmp[j++];
-	if (nb < 0 && stru.size_preci - ft_count_int(nb) > 0)
+	if (check_moins_buff(stru) == 1)
 		stru = ft_swap_char(stru, '-', '0');
 	if (stru.size_preci == 0 && stru.larg != 0 && nb == 0 && stru.plus == 0)
 		stru = ft_replace(stru, '0', ' ');
-	if (stru.size_preci == 0 && stru.larg != 0 && nb == 0 && stru.plus == 1)
+	if (stru.size_preci == 0 && stru.larg != 0 && nb == 0 && stru.plus == 1 && stru.type != 'u')
 		stru = ft_replace(stru, '0', '+');
 	return (stru);
 }

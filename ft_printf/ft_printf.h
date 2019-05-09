@@ -61,7 +61,7 @@ t_stru				ft_hexa(t_stru stru, va_list lst);
 t_stru				ft_char(t_stru stru, va_list lst);
 t_stru				ft_string(t_stru stru, va_list lst);
 t_stru				ft_pointer(t_stru stru, va_list lst);
-t_stru				ft_longlong(t_stru stru, va_list lst);
+t_stru				ft_unsigned(t_stru stru, va_list lst);
 
 t_stru				ft_resolve_zero(t_stru stru, long long nb);
 t_stru				ft_resolve_zero_int(t_stru stru, long long nb);
@@ -91,5 +91,6 @@ t_stru				ft_swap_char(t_stru stru, char a, char b);
 t_stru				ft_check_end(t_stru stru);
 t_stru				ft_replace(t_stru stru, char a, char b);
 t_stru				ft_put_char_at_end(t_stru stru, char c);
+int					check_moins_buff(t_stru stru);
 
 #endif

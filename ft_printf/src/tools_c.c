@@ -85,3 +85,32 @@ t_stru	ft_put_char_at_end(t_stru stru, char c)
 	stru.buff[i] = c;
 	return (stru);
 }
+
+int		check_moins_buff(t_stru stru)
+{
+	int		i;
+
+	i = 0;
+	if (stru.type == 'i' || stru.type == 'd')
+	{
+		while (stru.buff[i])
+		{
+			if (stru.buff[i] == '-' && stru.buff[i - 1] == '0')
+				return (1);
+			i++;
+		}
+	}
+	return (0);
+}
+
+
+
+
+
+
+
+
+
+
+
+

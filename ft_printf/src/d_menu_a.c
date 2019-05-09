@@ -15,7 +15,7 @@
 
 t_stru	ft_d_i(t_stru stru, va_list lst)
 {
-	int		nb;
+	int	nb;
 
 	nb = va_arg(lst, int);
 	ft_itoabuff_base(nb, 10, stru.buff);
@@ -28,24 +28,25 @@ t_stru	ft_d_i(t_stru stru, va_list lst)
 		stru = ft_resolve_esp(stru, nb);
 	if (stru.larg != 0 && stru.zero == 0)
 		stru = ft_resolve_larg(stru, nb);
-//	printf("buff: |%s|\n", stru.buff);
 	if (stru.moins == 1)
 		stru = ft_resolve_moins(stru, nb);
-	if (stru.zero == 1 && stru.larg >= ft_strlen(stru.buff))
-		stru = ft_resolve_zero_int(stru, nb);
-	if (stru.preci == 1 && stru.size_preci == 0 && nb == 0 && stru.larg == 0)
-		stru.buff[0] = '\0';
 	stru = ft_d_i_next(stru, lst, nb);
 	return (stru);
 }
 
 t_stru	ft_d_i_next(t_stru stru, va_list lst, int nb)
 {
-	if (stru.preci == 1 && stru.plus == 1 && nb == 0)
+	if (stru.zero == 1 && stru.larg >= ft_strlen(stru.buff))
+		stru = ft_resolve_zero_int(stru, nb);
+	if (stru.preci == 1 && stru.size_preci == 0 && nb == 0 && stru.larg == 0)
+		stru.buff[0] = '\0';
+	if (stru.preci == 1 && stru.plus == 1 && nb == 0 && stru.size_preci == 0)
 	{
 		stru = ft_replace(stru, '+', ' ');
 		stru = ft_put_char_at_end(stru, '+');
 	}
+	if (check_moins_buff(stru) == 1)
+		stru = ft_swap_char(stru, '-', '0');
 	stru.ret += ft_strlen(stru.buff);
 	ft_putstr(stru.buff);
 	return (stru);

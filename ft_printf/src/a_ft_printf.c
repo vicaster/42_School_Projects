@@ -13,6 +13,16 @@
 
 #include "../ft_printf.h"
 
+t_stru	ft_have_percent(t_stru stru, char *format)
+{
+	stru = ft_init_stru(stru);
+	stru = check_opt(format + stru.i, stru);
+	stru = check_preci(format + stru.i, stru);
+	stru = check_size(format + stru.i, stru);
+	stru = check_type(format + stru.i, stru);
+	return (stru);
+}
+
 /*
 ************* Fonction main ft_printf *************
 */
@@ -29,11 +39,7 @@ int		ft_printf(const char *format, ...)
 		if (format[stru.i] == '%')
 		{
 			stru.i++;
-			stru = ft_init_stru(stru);
-			stru = check_opt(format + stru.i, stru);
-			stru = check_preci(format + stru.i, stru);
-			stru = check_size(format + stru.i, stru);
-			stru = check_type(format + stru.i, stru);
+			stru = ft_have_percent(stru, format);
 			stru = resolve_printf(stru, lst);
 		}
 		else if (format[stru.i] != '%')

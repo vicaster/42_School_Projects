@@ -13,14 +13,15 @@
 
 #include "../ft_printf.h"
 
-t_stru	check_type(const char *format, t_stru stru)
-{
-	stru.type = format[0];
 /*
 	printf("\nsharp: %d\nzero: %d\nmoins: %d\nplus: %d\nesp: %d\ncount: %d\n", stru.sharp, stru.zero, stru.moins, stru.plus, stru.esp, stru.count);
 	printf("\nlarg: %d\nsize : %c\npreci : %d\nsize_preci: %d\ntype : %c\n\n", stru.larg, stru.size, stru.preci, stru.size_preci, stru.type);
 	exit(0);
 */
+
+t_stru	check_type(const char *format, t_stru stru)
+{
+	stru.type = format[0];
 	return (stru);
 }
 
