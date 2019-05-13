@@ -39,7 +39,7 @@ t_stru	ft_parse_ignore(t_stru stru)
 		stru.zero = 0;
 	if (stru.esp == 1 && stru.plus == 1)
 		stru.esp = 0;
-	if (stru.sharp && (stru.type == 'd' || stru.type == 'i' || stru.type == 'u' || stru.type == 'c' || stru.type == 's'))
+	if (stru.sharp == 1 && (stru.type == 'd' || stru.type == 'i' || stru.type == 'u' || stru.type == 'c' || stru.type == 's'))
 		stru.sharp = 0;
 	return (stru);
 }

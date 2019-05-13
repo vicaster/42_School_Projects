@@ -35,7 +35,7 @@ typedef	struct		s_stru
 	int				negative;
 	char			type;
 	char			size;
-	char			buff[BUFF_SIZE];
+	char			buff[BUFF_SIZE_PRINTF];
 }					t_stru;
 
 int					ft_printf(const char *format, ...);

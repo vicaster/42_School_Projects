@@ -826,7 +826,7 @@ void	test_unsigned(void)
 
 	printf("\033[0m\nTOTAL RETURN FT_PRINTF: %d\nTOTAL RETURN PRINTF:    %d\n\n", retft, retor);
 }
-
+/*
 int		main(int argc, char **argv)
 {
 	int		retmain;
@@ -862,14 +862,31 @@ int		main(int argc, char **argv)
 			test_chr();
 			test_str();
 			test_ptr();
+			test_unsigned();
 		}		
 	}
 }
+*/
 
-/*int	main(int ac, char **av)
+char	*fillstr(char *str)
+{
+	str[0] = 'a';
+	str[1] = 'b';
+	str[2] = 'c';
+	str[3] = 'd';
+	str[4] = 'e';
+	str[5] = 'f';
+	str[6] = '\0';
+	return (str);
+}
+
+int	main(int ac, char **av)
 {
 	int		i;
+	char	*str;
 
+	str = (char*)malloc(sizeof(char) * 7);
+	str = fillstr(str);
 	if (ac != 3)
 	{
 		printf("\nUsage: <Buffer> <Argument>\nSi pas d'argument, <0>");
@@ -883,4 +900,4 @@ int		main(int argc, char **argv)
 	printf(av[1], i);
 	printf("|");
 	return (0);
-}*/
+}
