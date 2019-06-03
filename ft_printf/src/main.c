@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/21 14:53:24 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/06 15:50:47 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/05/29 12:19:59 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -247,8 +247,8 @@ void		test_int(void)
  	retft += ft_printf("ft: |%0+7.15d|   |%0+7.15d|  |%0+7.15d|\n", 56, -56, 0);
  	retor += printf(   "or: |%0+7.15d|   |%0+7.15d|  |%0+7.15d|\n", 56, -56, 0);
 	printf("\n%i)\n", i++);//			63
- 	retft += ft_printf("ft: |je suis trop un beau goss|\n");
- 	retor += printf(   "or: |je suis trop un beau goss|\n");
+ 	retft += ft_printf("ft: |%-15.10d|\n", 101);
+ 	retor += printf(   "or: |%-15.10d|\n", 101);
 /*	printf("\n%i)\n", i++);//			64
 	retft += ft_printf("ft: |%+.2lld|\n", -9223372036854775807);
 	retor += printf(   "or: |%+.2lld|\n", -9223372036854775807);
@@ -826,7 +826,7 @@ void	test_unsigned(void)
 
 	printf("\033[0m\nTOTAL RETURN FT_PRINTF: %d\nTOTAL RETURN PRINTF:    %d\n\n", retft, retor);
 }
-/*
+
 int		main(int argc, char **argv)
 {
 	int		retmain;
@@ -866,8 +866,8 @@ int		main(int argc, char **argv)
 		}		
 	}
 }
-*/
 
+/*
 char	*fillstr(char *str)
 {
 	str[0] = 'a';
@@ -901,3 +901,4 @@ int	main(int ac, char **av)
 	printf("|");
 	return (0);
 }
+*/
