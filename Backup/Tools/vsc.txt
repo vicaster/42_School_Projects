@@ -1,8 +1,0 @@
-Mes reglages,
-(Acces: Code -> Preferences -> Keyboard Shortcut)
-
-
-Focus First Editor Group:	cmd + alt + fleche Haut
-Focus Left  Editor Group:	cmd + alt + fleche Gauche
-Focus Right Editor Group:	cmd + alt + fleche Droite
-Focus Next Terminal:		cmd + alt + fleche Bas
