@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/02/05 14:46:20 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/27 12:05:05 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/22 18:34:23 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,7 +18,8 @@ t_stru	ft_d_i(t_stru stru, va_list lst)
 	int	nb;
 
 	nb = va_arg(lst, int);
-	ft_itoabuff_base(nb, 10, stru.buff);
+	if (size_bool(stru) == 0)
+		ft_itoabuff_base(nb, 10, stru.buff);
 	stru = ft_parse_ignore(stru);
 	if (stru.preci == 1)
 		stru = ft_resolve_preci_int(stru, nb);
@@ -56,7 +57,8 @@ t_stru	ft_hexa(t_stru stru, va_list lst)
 {
 	long long	nb;
 
-	nb = va_arg(lst, long long);
+	if (size_bool(stru) == 0)
+		nb = va_arg(lst, long long);
 	ft_itoabuff_base(nb, 16, stru.buff);
 	stru = ft_parse_ignore(stru);
 	if (stru.preci == 1)
@@ -82,7 +84,8 @@ t_stru	ft_octal(t_stru stru, va_list lst)
 {
 	long long	nb;
 
-	nb = va_arg(lst, long long);
+	if (size_bool(stru) == 0)
+		nb = va_arg(lst, long long);
 	ft_itoabuff_base(nb, 8, stru.buff);
 	if (nb == 0 && stru.preci == 1)
 		ft_bzero(stru.buff, BUFF_SIZE_PRINTF);
@@ -110,7 +113,8 @@ t_stru	ft_char(t_stru stru, va_list lst)
 {
 	int	c;
 
-	c = va_arg(lst, int);
+	if (size_bool(stru) == 0)
+		c = va_arg(lst, int);
 	stru.buff[0] = c;
 	if (c == 0)
 		stru.ret += 1;

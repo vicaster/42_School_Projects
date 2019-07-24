@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/21 15:34:39 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/07 19:21:09 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/22 18:29:00 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -51,6 +51,7 @@ t_stru				check_opt(const char *format, t_stru stru);
 t_stru				check_preci(const char *format, t_stru stru);
 t_stru				check_size(const char *format, t_stru stru);
 t_stru				check_type(const char *format, t_stru stru);
+int					size_bool(t_stru stru);
 
 t_stru				resolve_printf(t_stru stru, va_list lst);
 t_stru				ft_percent(t_stru stru);

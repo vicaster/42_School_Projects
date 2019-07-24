@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/02/05 14:35:45 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/07 19:17:36 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/22 18:39:34 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -34,3 +34,11 @@ t_stru	resolve_printf(t_stru stru, va_list lst)
 		stru = ft_unsigned(stru, lst);
 	return (stru);
 }
+
+int		size_bool(t_stru stru)
+{
+	if (stru.size == 'l' || stru.size == 'L' || stru.size == 'h' || stru.size == 'H' || stru.size == 'F')
+		return (1);
+	return (0);
+}
+

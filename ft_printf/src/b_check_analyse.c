@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/24 14:26:11 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/06 15:29:55 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/22 14:22:59 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,14 +35,14 @@ t_stru	check_size(const char *format, t_stru stru)
 		stru.i += 2;
 	if (format[0] == 'L')
 		stru.size = 'F';
-	if (format[0] == 'h' && format[1] == 'h')
+	else if (format[0] == 'h' && format[1] == 'h')
 		stru.size = 'H';
-	if (format[0] == 'h')
+	else if (format[0] == 'h')
 		stru.size = 'h';
-	if (format[0] == 'l')
-		stru.size = 'l';
-	if (format[0] == 'l' && format[1] == 'l')
+	else if (format[0] == 'l' && format[1] == 'l')
 		stru.size = 'L';
+	else if (format[0] == 'l')
+		stru.size = 'l';
 	return (stru);
 }
 

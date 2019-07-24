@@ -6,7 +6,7 @@
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/21 14:53:24 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/29 12:19:59 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/22 16:32:47 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -827,6 +827,42 @@ void	test_unsigned(void)
 	printf("\033[0m\nTOTAL RETURN FT_PRINTF: %d\nTOTAL RETURN PRINTF:    %d\n\n", retft, retor);
 }
 
+void	test_h()
+{
+	int	i;
+	int	retft;
+	int	retor;
+
+	retft = 0;
+	retor = 0;
+	i = 1;
+	ft_printf("\033[36m**************TEST_H**************\n");
+
+	printf("\n%i)\n", i++);//			1
+	retft += ft_printf("ft: |%hd|     |%hd|     |%hd|\n", 123456, -123456, 0);
+	retor += printf(   "or: |%hd|     |%hd|     |%hd|\n", 123456, -123456, 0);
+
+	printf("\033[0m\nTOTAL RETURN FT_PRINTF: %d\nTOTAL RETURN PRINTF:    %d\n\n", retft, retor);
+}
+
+void	test_hh()
+{
+	int	i;
+	int	retft;
+	int	retor;
+
+	retft = 0;
+	retor = 0;
+	i = 1;
+	ft_printf("\033[36m**************TEST_HH**************\n");
+
+//	printf("\n%i)\n", i++);//			1
+//	retft += ft_printf("ft: |%hhc|   |%hhc|\n", 5, 0);
+//	retor += printf(   "or: |%hhc|   |%hhc|\n", 5, 0);
+
+	printf("\033[0m\nTOTAL RETURN FT_PRINTF: %d\nTOTAL RETURN PRINTF:    %d\n\n", retft, retor);
+}
+
 int		main(int argc, char **argv)
 {
 	int		retmain;
@@ -852,6 +888,10 @@ int		main(int argc, char **argv)
 			test_ptr();
 		if (ft_strchr(argv[1], 'u'))
 			test_unsigned();
+		if (ft_strchr(argv[1], 'h'))
+			test_h();
+		if (ft_strchr(argv[1], 'H'))
+			test_hh();
 		if(ft_strstr(argv[1], "all"))
 		{
 			test_percent();

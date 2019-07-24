@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   d_b_menu.c                                       .::    .:/ .      .::   */
+/*   d_menu_b.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: vicaster <vicaster@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/03/01 17:11:49 by vicaster     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/06 17:56:20 by vicaster    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/22 18:28:57 by vicaster    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,7 +18,8 @@ t_stru	ft_string(t_stru stru, va_list lst)
 	char	*str;
 	int		nb;
 
-	str = va_arg(lst, char*);
+	if (size_bool(stru) == 0)
+		str = va_arg(lst, char*);
 	if (str == NULL)
 		nb = 6;
 	else
@@ -55,7 +56,8 @@ t_stru	ft_pointer(t_stru stru, va_list lst)
 	stru = ft_parse_ignore(stru);
 	stru.buff[0] = '0';
 	stru.buff[1] = 'x';
-	nb = va_arg(lst, unsigned long);
+	if (size_bool(stru) == 0)
+		nb = va_arg(lst, unsigned long);
 	ft_itoabuff_base_uli(nb, 16, tmp);
 	if (nb == 0 && stru.preci == 0)
 		ft_bzero(tmp, BUFF_SIZE_PRINTF);
@@ -93,7 +95,8 @@ t_stru	ft_unsigned(t_stru stru, va_list lst)
 {
 	unsigned int	nb;
 
-	nb = va_arg(lst, unsigned int);
+	if (size_bool(stru) == 0)
+		nb = va_arg(lst, unsigned int);
 	ft_itoabuff_base(nb, 10, stru.buff);
 	stru = ft_parse_ignore(stru);
 	if (stru.preci == 1)
